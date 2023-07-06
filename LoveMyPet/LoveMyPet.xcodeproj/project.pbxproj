@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64460B8D2A5770510022FF23 /* EmptyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64460B8C2A5770510022FF23 /* EmptyCardView.swift */; };
 		646696C22A563A670058F5B0 /* LoveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646696C12A563A670058F5B0 /* LoveMyPetApp.swift */; };
 		646696C42A563A670058F5B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646696C32A563A670058F5B0 /* ContentView.swift */; };
 		646696C62A563A690058F5B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C52A563A690058F5B0 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64460B8C2A5770510022FF23 /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		646696BE2A563A670058F5B0 /* LoveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		646696C12A563A670058F5B0 /* LoveMyPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveMyPetApp.swift; sourceTree = "<group>"; };
 		646696C32A563A670058F5B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64460B8A2A5770270022FF23 /* EmptyPet */ = {
+			isa = PBXGroup;
+			children = (
+				64460B8C2A5770510022FF23 /* EmptyCardView.swift */,
+			);
+			path = EmptyPet;
+			sourceTree = "<group>";
+		};
 		646696B52A563A670058F5B0 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		646696D92A563CCC0058F5B0 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				64460B8A2A5770270022FF23 /* EmptyPet */,
 				646696C32A563A670058F5B0 /* ContentView.swift */,
 			);
 			path = Features;
@@ -234,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				646696C42A563A670058F5B0 /* ContentView.swift in Sources */,
+				64460B8D2A5770510022FF23 /* EmptyCardView.swift in Sources */,
 				646696C22A563A670058F5B0 /* LoveMyPetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
