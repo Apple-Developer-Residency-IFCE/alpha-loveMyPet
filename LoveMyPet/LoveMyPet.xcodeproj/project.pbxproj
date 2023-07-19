@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+Feature/014
 		64460B902A578A010022FF23 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64460B8F2A578A010022FF23 /* SettingsViewModel.swift */; };
+		64460B8D2A5770510022FF23 /* EmptyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64460B8C2A5770510022FF23 /* EmptyCardView.swift */; };
+ dev
 		646696C22A563A670058F5B0 /* LoveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646696C12A563A670058F5B0 /* LoveMyPetApp.swift */; };
 		646696C42A563A670058F5B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646696C32A563A670058F5B0 /* ContentView.swift */; };
 		646696C62A563A690058F5B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C52A563A690058F5B0 /* Assets.xcassets */; };
@@ -15,7 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+Feature/014
 		64460B8F2A578A010022FF23 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+
+		64460B8C2A5770510022FF23 /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
+ dev
 		646696BE2A563A670058F5B0 /* LoveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		646696C12A563A670058F5B0 /* LoveMyPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveMyPetApp.swift; sourceTree = "<group>"; };
 		646696C32A563A670058F5B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,12 +41,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+ Feature/014
 		64460B8E2A5789E80022FF23 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				64460B8F2A578A010022FF23 /* SettingsViewModel.swift */,
 			);
 			path = Settings;
+		64460B8A2A5770270022FF23 /* EmptyPet */ = {
+			isa = PBXGroup;
+			children = (
+				64460B8C2A5770510022FF23 /* EmptyCardView.swift */,
+			);
+			path = EmptyPet;
+ dev
 			sourceTree = "<group>";
 		};
 		646696B52A563A670058F5B0 = {
@@ -153,7 +168,10 @@
 		646696D92A563CCC0058F5B0 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+Feature/014
 				64460B8E2A5789E80022FF23 /* Settings */,
+				64460B8A2A5770270022FF23 /* EmptyPet */,
+dev
 				646696C32A563A670058F5B0 /* ContentView.swift */,
 			);
 			path = Features;
@@ -267,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				646696C42A563A670058F5B0 /* ContentView.swift in Sources */,
+				64460B8D2A5770510022FF23 /* EmptyCardView.swift in Sources */,
 				646696C22A563A670058F5B0 /* LoveMyPetApp.swift in Sources */,
 				64460B902A578A010022FF23 /* SettingsViewModel.swift in Sources */,
 			);
