@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct LoveMyPetApp: App {
+    var mode: SettingsViewModel = SettingsViewModel.shared
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group{
+                ContentView()
+            }
         }
     }
 }
