@@ -28,49 +28,7 @@ struct SettingsView: View {
                 ModeView(buttonId: 1, selectedButton: $selectedButton, image: "image_conf_ light", title: "Claro")
                 ModeView(buttonId: 2, selectedButton: $selectedButton, image: "image_conf_dark", title: "Escuro")
                 
-                /*VStack {
-                 Image("image_conf_system")
-                 Text("Sistema")
-                 .font(.system(size: 10))
-                 Button {
-                 } label: {
-                 Circle()
-                 .stroke(Color("primary_colors"), lineWidth: 2)
-                 .frame(width: 20, height: 20)
-                 .foregroundColor(selectedButton == 0 ? Color("primary_colors") : .clear)
-                 }
-                 }
-                 VStack {
-                 
-                 Image("image_conf_ light")
-                 .overlay(
-                 RoundedRectangle(cornerRadius: 10)
-                 .stroke(Color.black, lineWidth: 2)
-                 )
-                 Text("Claro")
-                 .font(.system(size: 10))
-                 Button {
-                 } label: {
-                 Circle()
-                 .stroke(Color("primary_colors"), lineWidth: 2)
-                 .frame(width: 20, height: 20)
-                 .foregroundColor(selectedButton == 1 ? Color("primary_colors") : .clear)
-                 }
-                 }
-                 VStack {
-                 Image("image_conf_dark")
-                 Text("Escuro")
-                 .font(.system(size: 10))
-                 Button {
-                 
-                 } label: {
-                 Circle()
-                 .stroke(Color("primary_colors"), lineWidth: 2)
-                 .frame(width: 20, height: 20)
-                 .foregroundColor(selectedButton == 2 ? Color("primary_colors") : .clear)
-                 }
-                 }
-                 }*/
+                
             }
             .padding(.bottom, 200)
         }
@@ -88,8 +46,6 @@ struct SettingsView: View {
             
                 
                 Button {
-                   // Image("Icon_select").clipShape(Circle())
-                   // Image("Icon_select")
                     selectedButton = buttonId
                 } label: {
                     if !(selectedButton == buttonId) {
@@ -101,19 +57,7 @@ struct SettingsView: View {
                     } else {
                         Image("Icon_select")
                     }
-                    //Image("Icon_select")
-                    
                 }
-            
-//                Button {
-//
-//                } label: {
-//                    Circle()
-//                        .stroke(Color("primary_colors"), lineWidth: 2)
-//                        .frame(width: 20, height: 20)
-//                    //  .foregroundColor(selectedButton == 2 ? Color("primary_colors") : .clear)
-//                }
-            
         }
         }
     }
