@@ -7,16 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		641AC2D32A6B418700A85A9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AC2CA2A6B418700A85A9C /* ContentView.swift */; };
+		641AC2D42A6B418700A85A9C /* PetPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AC2CC2A6B418700A85A9C /* PetPickerView.swift */; };
+		641AC2D52A6B418700A85A9C /* EmptyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AC2CE2A6B418700A85A9C /* EmptyCardView.swift */; };
+		641AC2D62A6B418700A85A9C /* PickerKG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AC2D22A6B418700A85A9C /* PickerKG.swift */; };
+		641AC32B2A6B437200A85A9C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AC32A2A6B437200A85A9C /* SettingsView.swift */; };
+		641AC32D2A6B442200A85A9C /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AC32C2A6B442200A85A9C /* SettingsViewModel.swift */; };
 		646696C22A563A670058F5B0 /* LoveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646696C12A563A670058F5B0 /* LoveMyPetApp.swift */; };
-		646696C42A563A670058F5B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646696C32A563A670058F5B0 /* ContentView.swift */; };
 		646696C62A563A690058F5B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C52A563A690058F5B0 /* Assets.xcassets */; };
 		646696C92A563A690058F5B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C82A563A690058F5B0 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		641AC2CA2A6B418700A85A9C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../../../alpha-loveMyPet/LoveMyPet/LoveMyPet/Features/ContentView.swift"; sourceTree = "<group>"; };
+		641AC2CC2A6B418700A85A9C /* PetPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetPickerView.swift; sourceTree = "<group>"; };
+		641AC2CE2A6B418700A85A9C /* EmptyCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
+		641AC2D22A6B418700A85A9C /* PickerKG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerKG.swift; sourceTree = "<group>"; };
+		641AC32A2A6B437200A85A9C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		641AC32C2A6B442200A85A9C /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		646696BE2A563A670058F5B0 /* LoveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		646696C12A563A670058F5B0 /* LoveMyPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveMyPetApp.swift; sourceTree = "<group>"; };
-		646696C32A563A670058F5B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		646696C52A563A690058F5B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		646696C82A563A690058F5B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,6 +42,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		641AC2CB2A6B418700A85A9C /* PetPicker */ = {
+			isa = PBXGroup;
+			children = (
+				641AC2CC2A6B418700A85A9C /* PetPickerView.swift */,
+			);
+			name = PetPicker;
+			path = "../../../../alpha-loveMyPet/LoveMyPet/LoveMyPet/Features/PetPicker";
+			sourceTree = "<group>";
+		};
+		641AC2CD2A6B418700A85A9C /* EmptyPet */ = {
+			isa = PBXGroup;
+			children = (
+				641AC2CE2A6B418700A85A9C /* EmptyCardView.swift */,
+			);
+			name = EmptyPet;
+			path = "../../../../alpha-loveMyPet/LoveMyPet/LoveMyPet/Features/EmptyPet";
+			sourceTree = "<group>";
+		};
+		641AC2CF2A6B418700A85A9C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				641AC32A2A6B437200A85A9C /* SettingsView.swift */,
+				641AC32C2A6B442200A85A9C /* SettingsViewModel.swift */,
+			);
+			name = Settings;
+			path = "../../../../alpha-loveMyPet/LoveMyPet/LoveMyPet/Features/Settings";
+			sourceTree = "<group>";
+		};
+		641AC2D02A6B418700A85A9C /* AddPett */ = {
+			isa = PBXGroup;
+			children = (
+				641AC2D12A6B418700A85A9C /* Components */,
+			);
+			name = AddPett;
+			path = "../../../../alpha-loveMyPet/LoveMyPet/LoveMyPet/Features/AddPett";
+			sourceTree = "<group>";
+		};
+		641AC2D12A6B418700A85A9C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				641AC2D22A6B418700A85A9C /* PickerKG.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		646696B52A563A670058F5B0 = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +198,11 @@
 		646696D92A563CCC0058F5B0 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				646696C32A563A670058F5B0 /* ContentView.swift */,
+				641AC2D02A6B418700A85A9C /* AddPett */,
+				641AC2CA2A6B418700A85A9C /* ContentView.swift */,
+				641AC2CD2A6B418700A85A9C /* EmptyPet */,
+				641AC2CB2A6B418700A85A9C /* PetPicker */,
+				641AC2CF2A6B418700A85A9C /* Settings */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -233,8 +292,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				646696C42A563A670058F5B0 /* ContentView.swift in Sources */,
+				641AC2D42A6B418700A85A9C /* PetPickerView.swift in Sources */,
 				646696C22A563A670058F5B0 /* LoveMyPetApp.swift in Sources */,
+				641AC2D52A6B418700A85A9C /* EmptyCardView.swift in Sources */,
+				641AC32B2A6B437200A85A9C /* SettingsView.swift in Sources */,
+				641AC2D32A6B418700A85A9C /* ContentView.swift in Sources */,
+				641AC2D62A6B418700A85A9C /* PickerKG.swift in Sources */,
+				641AC32D2A6B442200A85A9C /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
