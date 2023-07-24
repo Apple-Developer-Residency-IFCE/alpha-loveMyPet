@@ -28,7 +28,6 @@ struct SettingsView: View {
                 ModeView(buttonId: 1, selectedButton: $selectedButton, image: "image_conf_ light", title: "Claro")
                 ModeView(buttonId: 2, selectedButton: $selectedButton, image: "image_conf_dark", title: "Escuro")
                 
-                
             }
             .padding(.bottom, 200)
         }
@@ -44,7 +43,6 @@ struct SettingsView: View {
             Image(image)
             Text(title)
             
-                
                 Button {
                     selectedButton = buttonId
                 } label: {
