@@ -35,7 +35,7 @@ struct PickerKG: View {
                 Rectangle()
                     .fill(Color.gray)
                     .frame(height: 1)
-                HStack(spacing: 0){
+                HStack(spacing: 0) {
                     Group {
                         Picker("Quilo", selection: $quilo) {
                             ForEach(0..<100) {
