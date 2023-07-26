@@ -23,8 +23,8 @@ struct PetPicker<ComponentStyle: PickerStyle>: View {
 
 struct PetPickerView: View {
     @State private var selectedAnimal = ""
-    @State private var selectedGenero = ""
-    @State private var selectedRaca = ""
+    @State private var selectedGender = ""
+    @State private var selectedRace = ""
     let animalOptions = ["Não escolhida", "Cachorro", "Gato", "Pássaro", "Peixe"]
     let genderOptions = ["Nenhum", "Macho", "Fêmea"]
     let raceOptions = ["Não escolhida", "Golden Retriever", "Salsicha", "Goldfish"]
@@ -38,11 +38,11 @@ struct PetPickerView: View {
                              pickerStyle: DefaultPickerStyle())
                    PetPicker(title: "Espécie",
                              options: animalOptions,
-                             selectedItem: $selectedGenero,
+                             selectedItem: $selectedGender,
                              pickerStyle: DefaultPickerStyle())
                    PetPicker(title: "Raça",
                              options: raceOptions,
-                             selectedItem: $selectedRaca,
+                             selectedItem: $selectedRace,
                              pickerStyle: DefaultPickerStyle())
             }
         }
@@ -54,4 +54,3 @@ struct PetPickerView_Previews: PreviewProvider {
         PetPickerView()
     }
 }
-
