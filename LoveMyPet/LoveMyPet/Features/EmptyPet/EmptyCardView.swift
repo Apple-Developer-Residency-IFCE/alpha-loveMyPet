@@ -9,15 +9,15 @@ import SwiftUI
 
 struct EmptyCard: View {
     var body: some View {
-        VStack{
-            Image("EmptyCard")
+            VStack {
+                Image("EmptyCard")
                 .resizable()
-                .frame(width: 350,height: 100)
-            Group{
-                Text("Você não possui nenhum pet")
-                Text("adicionado :(")
-            }.foregroundColor(.gray)
-                
+                .frame(width: 350, height: 100)
+            Group {
+                    Text("Você não possui nenhum pet")
+                    Text("adicionado :(")
+            }
+            .foregroundColor(.gray)
         }
     }
 }
