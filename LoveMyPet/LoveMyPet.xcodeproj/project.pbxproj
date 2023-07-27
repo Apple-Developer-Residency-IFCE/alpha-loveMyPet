@@ -13,6 +13,7 @@
 		641AC2D62A6B418700A85A9C /* PickerKG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AC2D22A6B418700A85A9C /* PickerKG.swift */; };
 		641AC32B2A6B437200A85A9C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AC32A2A6B437200A85A9C /* SettingsView.swift */; };
 		641AC32D2A6B442200A85A9C /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AC32C2A6B442200A85A9C /* SettingsViewModel.swift */; };
+		641CCD2F2A6F237300299D6C /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CCD2E2A6F237300299D6C /* ImageFileManager.swift */; };
 		646696C22A563A670058F5B0 /* LoveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646696C12A563A670058F5B0 /* LoveMyPetApp.swift */; };
 		646696C62A563A690058F5B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C52A563A690058F5B0 /* Assets.xcassets */; };
 		646696C92A563A690058F5B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C82A563A690058F5B0 /* Preview Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		641AC2D22A6B418700A85A9C /* PickerKG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerKG.swift; sourceTree = "<group>"; };
 		641AC32A2A6B437200A85A9C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		641AC32C2A6B442200A85A9C /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		641CCD2E2A6F237300299D6C /* ImageFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 		646696BE2A563A670058F5B0 /* LoveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		646696C12A563A670058F5B0 /* LoveMyPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveMyPetApp.swift; sourceTree = "<group>"; };
 		646696C52A563A690058F5B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 				641AC2D22A6B418700A85A9C /* PickerKG.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		64489E0B2A709B0E00323F40 /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				641CCD2E2A6F237300299D6C /* ImageFileManager.swift */,
+			);
+			path = FileManager;
 			sourceTree = "<group>";
 		};
 		646696B52A563A670058F5B0 = {
@@ -198,6 +208,7 @@
 		646696D92A563CCC0058F5B0 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				64489E0B2A709B0E00323F40 /* FileManager */,
 				641AC2D02A6B418700A85A9C /* AddPett */,
 				641AC2CA2A6B418700A85A9C /* ContentView.swift */,
 				641AC2CD2A6B418700A85A9C /* EmptyPet */,
@@ -299,6 +310,7 @@
 				641AC2D32A6B418700A85A9C /* ContentView.swift in Sources */,
 				641AC2D62A6B418700A85A9C /* PickerKG.swift in Sources */,
 				641AC32D2A6B442200A85A9C /* SettingsViewModel.swift in Sources */,
+				641CCD2F2A6F237300299D6C /* ImageFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
