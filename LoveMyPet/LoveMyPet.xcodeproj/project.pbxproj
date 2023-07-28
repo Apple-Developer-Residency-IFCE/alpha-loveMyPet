@@ -78,6 +78,13 @@
 			children = (
 				641AC2D22A6B418700A85A9C /* PickerKG.swift */,
 				646D9A2E2A7085AB001FE3F2 /* PickerImage.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		6444BCBD2A7476D5006DCFA7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
 				64F00A562A732BF4008330C7 /* RadiusButton.swift */,
 			);
 			path = Components;
@@ -221,6 +228,7 @@
 		64F00A512A732BA7008330C7 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				6444BCBD2A7476D5006DCFA7 /* Components */,
 				64F00A522A732BC6008330C7 /* SettingsViewModel.swift */,
 				64F00A542A732BDC008330C7 /* SettingsView.swift */,
 			);
