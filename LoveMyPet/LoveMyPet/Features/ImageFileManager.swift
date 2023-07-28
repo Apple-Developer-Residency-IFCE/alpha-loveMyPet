@@ -23,4 +23,3 @@ func saveImagem(_ imagem: UIImage, caminhoDestino: URL) {
     } catch {
     }
 }
-
