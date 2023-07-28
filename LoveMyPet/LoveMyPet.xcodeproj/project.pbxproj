@@ -16,7 +16,6 @@
 		646696C62A563A690058F5B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C52A563A690058F5B0 /* Assets.xcassets */; };
 		646696C92A563A690058F5B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C82A563A690058F5B0 /* Preview Assets.xcassets */; };
 		646D9A2F2A7085AB001FE3F2 /* PickerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D9A2E2A7085AB001FE3F2 /* PickerImage.swift */; };
-		64B3A3D42A733042009BBE35 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B3A3D32A733042009BBE35 /* ImageFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		646696C52A563A690058F5B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		646696C82A563A690058F5B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		646D9A2E2A7085AB001FE3F2 /* PickerImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerImage.swift; sourceTree = "<group>"; };
-		64B3A3D32A733042009BBE35 /* ImageFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,7 +204,6 @@
 				641AC2CA2A6B418700A85A9C /* ContentView.swift */,
 				641AC2CD2A6B418700A85A9C /* EmptyPet */,
 				641AC2CB2A6B418700A85A9C /* PetPicker */,
-				64B3A3D32A733042009BBE35 /* ImageFileManager.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -326,7 +323,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				641AC2D42A6B418700A85A9C /* PetPickerView.swift in Sources */,
-				64B3A3D42A733042009BBE35 /* ImageFileManager.swift in Sources */,
 				646696C22A563A670058F5B0 /* LoveMyPetApp.swift in Sources */,
 				641AC2D52A6B418700A85A9C /* EmptyCardView.swift in Sources */,
 				641AC2D32A6B418700A85A9C /* ContentView.swift in Sources */,
