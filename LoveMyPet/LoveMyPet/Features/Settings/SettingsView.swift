@@ -1,7 +1,6 @@
 import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject private var themeviewmodel: SettingsViewModel
-    @State var selectedButton: Int = 0
     var body: some View {
             VStack {
                 Color("background_color")
@@ -17,9 +16,18 @@ struct SettingsView: View {
                     .padding(.bottom, 50)
                     .padding(.horizontal, -150)
                 HStack(spacing: 30) {
-                    RadiusButton(buttonId: 0, selectedButton: $selectedButton, image: "image_conf_system", title: "Sistema") {themeviewmodel.currentTheme = .system}
-                    RadiusButton(buttonId: 1, selectedButton: $selectedButton, image: "image_conf_ light", title: "Claro") {themeviewmodel.currentTheme = .light}
-                    RadiusButton(buttonId: 2, selectedButton: $selectedButton, image: "image_conf_dark", title: "Escuro") {themeviewmodel.currentTheme = .dark}
+                    RadiusButton(buttonId: 0,
+                                 selectedButton: $themeviewmodel.selectedButton,
+                                 image: "image_conf_system",
+                                 title: "Sistema") {themeviewmodel.setTheme(.system)}
+                    RadiusButton(buttonId: 1,
+                                 selectedButton: $themeviewmodel.selectedButton,
+                                 image: "image_conf_ light",
+                                 title: "Claro") {themeviewmodel.setTheme(.light)}
+                    RadiusButton(buttonId: 2,
+                                 selectedButton: $themeviewmodel.selectedButton,
+                                 image: "image_conf_dark",
+                                 title: "Escuro") {themeviewmodel.setTheme(.dark)}
                 }
                 .padding(.bottom, 350)
             }
@@ -29,6 +37,7 @@ struct SettingsView: View {
     struct SettingsView_Previews: PreviewProvider {
         static var previews: some View {
             SettingsView()
+                .environmentObject(SettingsViewModel())
         }
     }
 }
