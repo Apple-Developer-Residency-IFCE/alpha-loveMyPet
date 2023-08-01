@@ -16,6 +16,9 @@
 		646696C62A563A690058F5B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C52A563A690058F5B0 /* Assets.xcassets */; };
 		646696C92A563A690058F5B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C82A563A690058F5B0 /* Preview Assets.xcassets */; };
 		646D9A2F2A7085AB001FE3F2 /* PickerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D9A2E2A7085AB001FE3F2 /* PickerImage.swift */; };
+		64F00A532A732BC6008330C7 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F00A522A732BC6008330C7 /* SettingsViewModel.swift */; };
+		64F00A552A732BDC008330C7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F00A542A732BDC008330C7 /* SettingsView.swift */; };
+		64F00A572A732BF4008330C7 /* RadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F00A562A732BF4008330C7 /* RadiusButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		646696C52A563A690058F5B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		646696C82A563A690058F5B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		646D9A2E2A7085AB001FE3F2 /* PickerImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerImage.swift; sourceTree = "<group>"; };
+		64F00A522A732BC6008330C7 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		64F00A542A732BDC008330C7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		64F00A562A732BF4008330C7 /* RadiusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,14 @@
 			);
 			path = Components;
 			sourceTree = "<group>";
+		};
+		6444BCBD2A7476D5006DCFA7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				64F00A562A732BF4008330C7 /* RadiusButton.swift */,
+			);
+			path = Components;
+      sourceTree = "<group>";
 		};
 		64489E0B2A709B0E00323F40 /* FileManager */ = {
 			isa = PBXGroup;
@@ -199,6 +213,7 @@
 		646696D92A563CCC0058F5B0 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				64F00A512A732BA7008330C7 /* Settings */,
 				64489E0B2A709B0E00323F40 /* FileManager */,
 				641AC2D02A6B418700A85A9C /* AddPett */,
 				641AC2CA2A6B418700A85A9C /* ContentView.swift */,
@@ -223,12 +238,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		64F00A472A731C5B008330C7 /* Recovered References */ = {
+		64F00A512A732BA7008330C7 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				641AC32C2A6B442200A85A9C /* SettingsViewModel.swift */,
+				6444BCBD2A7476D5006DCFA7 /* Components */,
+				64F00A522A732BC6008330C7 /* SettingsViewModel.swift */,
+				64F00A542A732BDC008330C7 /* SettingsView.swift */,
 			);
-			name = "Recovered References";
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,12 +340,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				641AC2D42A6B418700A85A9C /* PetPickerView.swift in Sources */,
+				64F00A552A732BDC008330C7 /* SettingsView.swift in Sources */,
+				64F00A572A732BF4008330C7 /* RadiusButton.swift in Sources */,
 				646696C22A563A670058F5B0 /* LoveMyPetApp.swift in Sources */,
 				641AC2D52A6B418700A85A9C /* EmptyCardView.swift in Sources */,
 				641AC2D32A6B418700A85A9C /* ContentView.swift in Sources */,
 				641AC2D62A6B418700A85A9C /* PickerKG.swift in Sources */,
 				641CCD2F2A6F237300299D6C /* ImageFileManager.swift in Sources */,
 				646D9A2F2A7085AB001FE3F2 /* PickerImage.swift in Sources */,
+				64F00A532A732BC6008330C7 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
