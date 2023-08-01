@@ -68,7 +68,7 @@ struct PickerKG: View {
                     }
                 }
                 .overlay {
-                    if isView{
+                    if isView {
                         Text(",")
                     }
                 }

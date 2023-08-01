@@ -43,7 +43,7 @@ struct PetPickerView: View {
                    PetPicker(title: "Raça",
                              options: raceOptions,
                              selectedItem: $selectedRace,
-                             pickerStyle: DefaultPickerStyle())
+                             pickerStyle: .navigationLink)
             }
         }
     }
@@ -51,6 +51,8 @@ struct PetPickerView: View {
 
 struct PetPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        PetPickerView()
+        NavigationStack {
+            PetPickerView()
+        }
     }
 }

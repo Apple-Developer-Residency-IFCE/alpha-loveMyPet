@@ -7,17 +7,19 @@ struct ImagePicker: View {
     var body: some View {
         PhotosPicker(selection: $avatarItem, matching: .images) {
             ZStack {
-            
-            VStack {
-                Circle()
-                    .foregroundColor(.gray)
-                    .frame(width: 64, height: 64)
-                Text("Escolher foto")
-                    .foregroundColor(.black)
+                VStack {
+                    Circle()
+                        .foregroundColor(.gray)
+                        .frame(width: 64, height: 64)
+                    Text("Escolher foto")
+                        .foregroundColor(.black)
                 }
-                
-                
-                
+                avatarImage?
+                    .resizable()
+                    .frame(width: 64, height: 64)
+                    .scaledToFit()
+                    .cornerRadius(100)
+                    .padding(.bottom, 30)
             }
         }
         .onChange(of: avatarItem) { _ in
@@ -33,25 +35,8 @@ struct ImagePicker: View {
         }
     }
 }
-
-struct ImagePicker_Previews: PreviewProvider {
-    static var previews: some View {
-        ImagePicker()
+    struct ImagePicker_Previews: PreviewProvider {
+        static var previews: some View {
+            ImagePicker()
+        }
     }
-}
-//}
-//if let avatarImage {
-//    avatarImage
-//        .resizable()
-//        .frame(width: 64, height: 64)
-//        .scaledToFit()
-//        .cornerRadius(100)
-//    Text("Trocar foto")
-//        .foregroundColor(.black)
-//} else {
-//    Circle()
-//        .foregroundColor(.gray)
-//        .frame(width: 64, height: 64)
-//}
-//    Text("Escolher foto")
-//        .foregroundColor(.black)
