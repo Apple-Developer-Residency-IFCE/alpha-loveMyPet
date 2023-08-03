@@ -20,17 +20,20 @@ struct PickerKG: View {
                 Rectangle()
                     .overlay {
                         HStack {
-                            Text("\(quilo)")
-                                .foregroundColor(.black)
-                            Text(",")
-                                .foregroundColor(.black)
-                            Text("\(grama) Kg")
+                            Text("\(quilo),\(grama) Kg ")
                                 .foregroundColor(.black)
                         }
                     }
                     .frame(width: 100, height: 32)
                     .foregroundColor(.gray.opacity(0.10))
                     .cornerRadius(4)
+                  
+
+            }
+            .onTapGesture {
+                withAnimation(Animation.easeInOut(duration: 0.5)) {
+                    isView.toggle()
+                }
             }
             .padding()
             HStack(spacing: 0) {
@@ -65,7 +68,7 @@ struct PickerKG: View {
                     Text(",")
                 }
             }
-        }.frame(maxHeight: 70)
+        }
     }
 }
 
