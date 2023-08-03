@@ -4,6 +4,7 @@ import SwiftUI
 struct ImagePicker: View {
     @State private var avatarItem: PhotosPickerItem?
     @State private var avatarImage: Image?
+    @State var text: String
     var body: some View {
         PhotosPicker(selection: $avatarItem, matching: .images) {
             ZStack {
@@ -11,7 +12,7 @@ struct ImagePicker: View {
                     Circle()
                         .foregroundColor(.gray)
                         .frame(width: 64, height: 64)
-                    Text("Escolher foto")
+                    Text(text)
                         .foregroundColor(.black)
                 }
                 avatarImage?
@@ -37,6 +38,6 @@ struct ImagePicker: View {
 }
     struct ImagePicker_Previews: PreviewProvider {
         static var previews: some View {
-            ImagePicker()
+            ImagePicker(text: "Escolher Foto")
         }
     }
