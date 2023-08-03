@@ -11,7 +11,7 @@ struct LoveMyPetApp: App {
     @StateObject private var settingsviewmodel = SettingsViewModel()
     var body: some Scene {
         WindowGroup {
-            SettingsView()
+           SettingsView()
                 .environmentObject(settingsviewmodel)
         }
     }

@@ -16,6 +16,7 @@
 		644A8C142A79B47D00172B93 /* Pet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644A8C122A79B47D00172B93 /* Pet+CoreDataClass.swift */; };
 		644A8C152A79B47D00172B93 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644A8C132A79B47D00172B93 /* Pet+CoreDataProperties.swift */; };
 		644A8C182A79B51C00172B93 /* PetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644A8C172A79B51C00172B93 /* PetProvider.swift */; };
+		644A8C1D2A79CC3F00172B93 /* EditPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644A8C1C2A79CC3F00172B93 /* EditPetView.swift */; };
 		646696C22A563A670058F5B0 /* LoveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646696C12A563A670058F5B0 /* LoveMyPetApp.swift */; };
 		646696C62A563A690058F5B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C52A563A690058F5B0 /* Assets.xcassets */; };
 		646696C92A563A690058F5B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C82A563A690058F5B0 /* Preview Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		644A8C122A79B47D00172B93 /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataClass.swift"; sourceTree = "<group>"; };
 		644A8C132A79B47D00172B93 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		644A8C172A79B51C00172B93 /* PetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProvider.swift; sourceTree = "<group>"; };
+		644A8C1C2A79CC3F00172B93 /* EditPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetView.swift; sourceTree = "<group>"; };
 		646696BE2A563A670058F5B0 /* LoveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		646696C12A563A670058F5B0 /* LoveMyPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveMyPetApp.swift; sourceTree = "<group>"; };
 		646696C52A563A690058F5B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 				644A8C172A79B51C00172B93 /* PetProvider.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		644A8C192A79C2B900172B93 /* EditPet */ = {
+			isa = PBXGroup;
+			children = (
+				644A8C1C2A79CC3F00172B93 /* EditPetView.swift */,
+			);
+			path = EditPet;
 			sourceTree = "<group>";
 		};
 		646696B52A563A670058F5B0 = {
@@ -231,6 +241,7 @@
 		646696D92A563CCC0058F5B0 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				644A8C192A79C2B900172B93 /* EditPet */,
 				64F00A512A732BA7008330C7 /* Settings */,
 				64489E0B2A709B0E00323F40 /* FileManager */,
 				641AC2D02A6B418700A85A9C /* AddPett */,
@@ -362,6 +373,7 @@
 				644A8C152A79B47D00172B93 /* Pet+CoreDataProperties.swift in Sources */,
 				64F00A572A732BF4008330C7 /* RadiusButton.swift in Sources */,
 				646696C22A563A670058F5B0 /* LoveMyPetApp.swift in Sources */,
+				644A8C1D2A79CC3F00172B93 /* EditPetView.swift in Sources */,
 				641AC2D52A6B418700A85A9C /* EmptyCardView.swift in Sources */,
 				641AC2D32A6B418700A85A9C /* ContentView.swift in Sources */,
 				641AC2D62A6B418700A85A9C /* PickerKG.swift in Sources */,
