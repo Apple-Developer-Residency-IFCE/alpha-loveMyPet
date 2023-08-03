@@ -74,24 +74,3 @@ struct SwiftUIView_Previews: PreviewProvider {
         PickerKG(isView: .constant(true))
     }
 }
-
-//
-//class MyPicker: UIView {
-//    var kg: Int = 0
-//}
-//
-//struct MyPickerRepresentable: UIViewRepresentable {
-//    typealias UIViewType = MyPicker
-//
-//    func makeUIView(context: Context) -> MyPicker {
-//        MyPicker()
-//    }
-//
-//    func updateUIView(_ uiView: MyPicker, context: Context) {
-//        uiView.kg = 10
-//    }
-//
-//    func makeCoordinator() -> () {
-//        <#code#>
-//    }
-//}
