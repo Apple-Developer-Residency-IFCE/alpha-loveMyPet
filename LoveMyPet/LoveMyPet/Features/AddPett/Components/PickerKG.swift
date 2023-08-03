@@ -31,9 +31,7 @@ struct PickerKG: View {
 
             }
             .onTapGesture {
-                withAnimation(Animation.easeInOut(duration: 0.5)) {
                     isView.toggle()
-                }
             }
             .padding()
             HStack(spacing: 0) {
@@ -63,6 +61,7 @@ struct PickerKG: View {
                     .pickerStyle(.wheel)
                 }
             }
+            .padding(.top,-70)
             .overlay {
                 if isView {
                     Text(",")
