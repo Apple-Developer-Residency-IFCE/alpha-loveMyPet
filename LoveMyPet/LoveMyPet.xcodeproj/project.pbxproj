@@ -21,6 +21,8 @@
 		646696C62A563A690058F5B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C52A563A690058F5B0 /* Assets.xcassets */; };
 		646696C92A563A690058F5B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C82A563A690058F5B0 /* Preview Assets.xcassets */; };
 		646D9A2F2A7085AB001FE3F2 /* PickerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D9A2E2A7085AB001FE3F2 /* PickerImage.swift */; };
+		64D89E112A79B04900715B92 /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D89E102A79B04900715B92 /* ProfilesView.swift */; };
+		64D89E172A79B3D400715B92 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D89E162A79B3D400715B92 /* TabBarView.swift */; };
 		64F00A532A732BC6008330C7 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F00A522A732BC6008330C7 /* SettingsViewModel.swift */; };
 		64F00A552A732BDC008330C7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F00A542A732BDC008330C7 /* SettingsView.swift */; };
 		64F00A572A732BF4008330C7 /* RadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F00A562A732BF4008330C7 /* RadiusButton.swift */; };
@@ -42,6 +44,8 @@
 		646696C52A563A690058F5B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		646696C82A563A690058F5B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		646D9A2E2A7085AB001FE3F2 /* PickerImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerImage.swift; sourceTree = "<group>"; };
+		64D89E102A79B04900715B92 /* ProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesView.swift; sourceTree = "<group>"; };
+		64D89E162A79B3D400715B92 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		64F00A522A732BC6008330C7 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		64F00A542A732BDC008330C7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		64F00A562A732BF4008330C7 /* RadiusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusButton.swift; sourceTree = "<group>"; };
@@ -241,6 +245,8 @@
 		646696D92A563CCC0058F5B0 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				64D89E152A79B3A200715B92 /* Components */,
+				64D89E0F2A79AFD300715B92 /* Profiles */,
 				644A8C192A79C2B900172B93 /* EditPet */,
 				64F00A512A732BA7008330C7 /* Settings */,
 				64489E0B2A709B0E00323F40 /* FileManager */,
@@ -265,6 +271,31 @@
 				646696C52A563A690058F5B0 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		64D89E0F2A79AFD300715B92 /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				64D89E102A79B04900715B92 /* ProfilesView.swift */,
+				64D89E122A79B06200715B92 /* Components */,
+			);
+			name = Profiles;
+			path = "Perfís";
+			sourceTree = "<group>";
+		};
+		64D89E122A79B06200715B92 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		64D89E152A79B3A200715B92 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				64D89E162A79B3D400715B92 /* TabBarView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		64F00A512A732BA7008330C7 /* Settings */ = {
@@ -369,7 +400,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				641AC2D42A6B418700A85A9C /* PetPickerView.swift in Sources */,
+				64D89E172A79B3D400715B92 /* TabBarView.swift in Sources */,
 				64F00A552A732BDC008330C7 /* SettingsView.swift in Sources */,
+				64D89E112A79B04900715B92 /* ProfilesView.swift in Sources */,
 				644A8C152A79B47D00172B93 /* Pet+CoreDataProperties.swift in Sources */,
 				64F00A572A732BF4008330C7 /* RadiusButton.swift in Sources */,
 				646696C22A563A670058F5B0 /* LoveMyPetApp.swift in Sources */,

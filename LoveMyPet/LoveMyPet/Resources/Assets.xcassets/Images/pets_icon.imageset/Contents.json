@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Icons-7.svg",
+      "filename" : "Icons-9.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,12 +12,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Vector-2.svg",
+      "filename" : "Icons-12.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Icons-7 1.svg",
+      "filename" : "Icons-9 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -28,12 +28,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Vector-2 1.svg",
+      "filename" : "Icons-12 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Icons-7 2.svg",
+      "filename" : "Icons-9 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -44,7 +44,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Vector-2 2.svg",
+      "filename" : "Icons-12 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
