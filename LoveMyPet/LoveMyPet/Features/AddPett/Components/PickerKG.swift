@@ -64,7 +64,10 @@ struct PickerKG: View {
             .padding(.top,-70)
             .overlay {
                 if isView {
-                    Text(",")
+                    HStack{
+                        Text(",")
+                            .padding(.top,-50)
+                    }
                 }
             }
         }
