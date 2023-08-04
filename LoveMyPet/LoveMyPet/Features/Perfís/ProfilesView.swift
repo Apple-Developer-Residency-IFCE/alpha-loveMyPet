@@ -1,4 +1,3 @@
-//
 //  ProfilesView.swift
 //  LoveMyPet
 //
@@ -9,12 +8,35 @@ import SwiftUI
 
 struct ProfilesView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Spacer()
+            }
+        }
+        .navigationTitle("Pets")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                NavigationLink(destination: SecondView()) {
+                    Text("Adcionar")
+                }
+            }
+        }
+    }
+}
+
+struct SecondView: View {
+    var body: some View {
+        Text("Esta é a segunda página!")
     }
 }
 
 struct ProfilesView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilesView()
+        NavigationStack {
+            ProfilesView()
+                .onAppear {
+                }
+        }
     }
 }

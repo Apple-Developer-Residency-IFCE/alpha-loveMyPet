@@ -9,9 +9,14 @@ import SwiftUI
 @main
 struct LoveMyPetApp: App {
     @StateObject private var settingsviewmodel = SettingsViewModel()
+    @State var selectedTab: Tab = .pets
     var body: some Scene {
         WindowGroup {
-           SettingsView()
+            TabBarView(selectedTab: $selectedTab) {
+                SettingsView()
+            } profilesView: {
+                ProfilesView()
+            }
                 .environmentObject(settingsviewmodel)
         }
     }
