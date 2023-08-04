@@ -12,9 +12,7 @@ class ImageFileManager {
         guard let imageData = image.jpegData(compressionQuality: 1.0) else {
             return false
         }
-        
         let fileURL = getDocumentsDirectory().appendingPathComponent("\(imageName).jpg")
-        
         do {
             try imageData.write(to: fileURL)
             return true
