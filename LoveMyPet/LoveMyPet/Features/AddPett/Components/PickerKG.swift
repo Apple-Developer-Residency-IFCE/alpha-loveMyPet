@@ -29,11 +29,10 @@ struct PickerKG: View {
                     .cornerRadius(4)
                   
 
-            }
+            }.padding(.top,0)
             .onTapGesture {
                     isView.toggle()
             }
-            .padding()
             HStack(spacing: 0) {
                 if isView {
                     Group {
