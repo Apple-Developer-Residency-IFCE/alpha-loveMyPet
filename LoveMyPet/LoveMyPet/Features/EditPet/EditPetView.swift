@@ -56,11 +56,6 @@ struct EditPetView: View {
 
                 Section {
                     PickerKG(isView: $isView)
-                        .onTapGesture {
-                            withAnimation(Animation.easeInOut(duration: 0.5)) {
-                                isView.toggle()
-                            }
-                        }
                         .listRowBackground(Color("forms_colors"))
 
                     PetPicker(title: "Castrado(a)?",

@@ -16,23 +16,24 @@ struct PickerKG: View {
         VStack {
             HStack {
                 Text("Peso")
+                    .foregroundColor(Color("background_text"))
                 Spacer()
                 Rectangle()
                     .overlay {
                         HStack {
-                            Text("\(quilo)")
-                                .foregroundColor(.black)
-                            Text(",")
-                                .foregroundColor(.black)
-                            Text("\(grama) Kg")
-                                .foregroundColor(.black)
+                            Text("\(quilo),\(grama) Kg ")
+                                .foregroundColor(Color("background_text"))
                         }
                     }
                     .frame(width: 100, height: 32)
                     .foregroundColor(.gray.opacity(0.10))
                     .cornerRadius(4)
+                  
+
+            }.padding(.top,0)
+            .onTapGesture {
+                    isView.toggle()
             }
-            .padding()
             HStack(spacing: 0) {
                 if isView {
                     Group {
@@ -60,12 +61,16 @@ struct PickerKG: View {
                     .pickerStyle(.wheel)
                 }
             }
+            .padding(.top,-70)
             .overlay {
                 if isView {
-                    Text(",")
+                    HStack{
+                        Text(",")
+                            .padding(.top,-50)
+                    }
                 }
             }
-        }.frame(maxHeight: 70)
+        }
     }
 }
 
