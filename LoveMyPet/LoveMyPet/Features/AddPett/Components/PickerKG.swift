@@ -16,12 +16,13 @@ struct PickerKG: View {
         VStack {
             HStack {
                 Text("Peso")
+                    .foregroundColor(Color("background_text"))
                 Spacer()
                 Rectangle()
                     .overlay {
                         HStack {
                             Text("\(quilo),\(grama) Kg ")
-                                .foregroundColor(.black)
+                                .foregroundColor(Color("background_text"))
                         }
                     }
                     .frame(width: 100, height: 32)
