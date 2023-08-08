@@ -25,6 +25,7 @@ struct PetPickerView: View {
     @State private var selectedAnimal = ""
     @State private var selectedGender = ""
     @State private var selectedRace = ""
+    @State private var petName = ""
     @State  var selectedData: Date
     let animalOptions = ["Não escolhida", "Cachorro", "Gato", "Pássaro", "Peixe"]
     let genderOptions = ["Nenhum", "Macho", "Fêmea"]
@@ -33,6 +34,9 @@ struct PetPickerView: View {
     var body: some View {
         VStack {
             List {
+                TextField("Nome do Pet", text: $petName)
+                    .foregroundColor(.gray)
+                    .listRowBackground(Color("forms_colors"))
         
                    PetPicker(title: "Gênero",
                              options: genderOptions,
@@ -50,6 +54,7 @@ struct PetPickerView: View {
                              pickerStyle: .navigationLink)
                    .listRowBackground(Color("forms_colors"))
                 DatePicker("Nascimento:", selection: $selectedData, in: ...Date(), displayedComponents: .date)
+                    .environment(\.locale, Locale.init(identifier: "pt"))
                     .listRowBackground(Color("forms_colors"))
             }
 

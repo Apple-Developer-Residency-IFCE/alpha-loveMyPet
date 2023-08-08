@@ -13,7 +13,7 @@ struct ImagePicker: View {
                         .foregroundColor(.gray)
                         .frame(width: 64, height: 64)
                     Text(text)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("background_text"))
                 }
                 avatarImage?
                     .resizable()
