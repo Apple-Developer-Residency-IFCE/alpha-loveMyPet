@@ -15,7 +15,7 @@ struct LoveMyPetApp: App {
             TabBarView(selectedTab: $selectedTab) {
                 SettingsView()
             } profilesView: {
-                ProfilesView()
+                EditPetView(selectedData: .now, namePet: "Lua")
             }
                 .environmentObject(settingsviewmodel)
         }

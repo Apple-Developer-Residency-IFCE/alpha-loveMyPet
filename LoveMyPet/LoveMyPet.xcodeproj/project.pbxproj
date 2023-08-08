@@ -17,6 +17,8 @@
 		644A8C152A79B47D00172B93 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644A8C132A79B47D00172B93 /* Pet+CoreDataProperties.swift */; };
 		644A8C182A79B51C00172B93 /* PetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644A8C172A79B51C00172B93 /* PetProvider.swift */; };
 		644A8C1D2A79CC3F00172B93 /* EditPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644A8C1C2A79CC3F00172B93 /* EditPetView.swift */; };
+		644D43722A82EFE70081990C /* AddPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D43712A82EFE70081990C /* AddPetViewModel.swift */; };
+		644D43742A830A780081990C /* SheetPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D43732A830A780081990C /* SheetPetView.swift */; };
 		646696C22A563A670058F5B0 /* LoveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646696C12A563A670058F5B0 /* LoveMyPetApp.swift */; };
 		646696C62A563A690058F5B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C52A563A690058F5B0 /* Assets.xcassets */; };
 		646696C92A563A690058F5B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646696C82A563A690058F5B0 /* Preview Assets.xcassets */; };
@@ -41,6 +43,8 @@
 		644A8C132A79B47D00172B93 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		644A8C172A79B51C00172B93 /* PetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProvider.swift; sourceTree = "<group>"; };
 		644A8C1C2A79CC3F00172B93 /* EditPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetView.swift; sourceTree = "<group>"; };
+		644D43712A82EFE70081990C /* AddPetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewModel.swift; sourceTree = "<group>"; };
+		644D43732A830A780081990C /* SheetPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPetView.swift; sourceTree = "<group>"; };
 		646696BE2A563A670058F5B0 /* LoveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		646696C12A563A670058F5B0 /* LoveMyPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveMyPetApp.swift; sourceTree = "<group>"; };
 		646696C52A563A690058F5B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				644A8C1C2A79CC3F00172B93 /* EditPetView.swift */,
+				644D43732A830A780081990C /* SheetPetView.swift */,
 			);
 			path = EditPet;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 			children = (
 				64BE876E2A81A17000A7E530 /* AddPetsView.swift */,
 				64BE87702A81A1B000A7E530 /* SheetPetsView.swift */,
+				644D43712A82EFE70081990C /* AddPetViewModel.swift */,
 			);
 			path = AddPets;
 			sourceTree = "<group>";
@@ -419,6 +425,7 @@
 				64D89E112A79B04900715B92 /* ProfilesView.swift in Sources */,
 				644A8C152A79B47D00172B93 /* Pet+CoreDataProperties.swift in Sources */,
 				64F00A572A732BF4008330C7 /* RadiusButton.swift in Sources */,
+				644D43722A82EFE70081990C /* AddPetViewModel.swift in Sources */,
 				64BE87712A81A1B000A7E530 /* SheetPetsView.swift in Sources */,
 				646696C22A563A670058F5B0 /* LoveMyPetApp.swift in Sources */,
 				644A8C1D2A79CC3F00172B93 /* EditPetView.swift in Sources */,
@@ -426,6 +433,7 @@
 				641AC2D52A6B418700A85A9C /* EmptyCardView.swift in Sources */,
 				641AC2D32A6B418700A85A9C /* ContentView.swift in Sources */,
 				641AC2D62A6B418700A85A9C /* PickerKG.swift in Sources */,
+				644D43742A830A780081990C /* SheetPetView.swift in Sources */,
 				644A8C182A79B51C00172B93 /* PetProvider.swift in Sources */,
 				641CCD2F2A6F237300299D6C /* ImageFileManager.swift in Sources */,
 				646D9A2F2A7085AB001FE3F2 /* PickerImage.swift in Sources */,
