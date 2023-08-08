@@ -1,4 +1,3 @@
-
 //  TabBarView.swift
 //  LoveMyPet
 //
@@ -10,7 +9,6 @@ struct TabBarView<Settings: View, Profiles: View>: View {
     @Binding var selectedTab: Tab
     @ViewBuilder let settingsView: () -> Settings
     @ViewBuilder let profilesView: () -> Profiles
-
     var body: some View {
         TabView(selection: $selectedTab) {
             profilesView()
@@ -25,7 +23,6 @@ struct TabBarView<Settings: View, Profiles: View>: View {
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarBackground(Color("TabBar_colors"), for: .tabBar)
                 .tag(Tab.pets)
-
             settingsView()
                 .tabItem {
                     Label {

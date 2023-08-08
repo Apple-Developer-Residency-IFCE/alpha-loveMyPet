@@ -28,11 +28,10 @@ struct PickerKG: View {
                     .frame(width: 100, height: 32)
                     .foregroundColor(.gray.opacity(0.10))
                     .cornerRadius(4)
-                  
-
-            }.padding(.top,0)
+            }
+            .padding(.top, 0)
             .onTapGesture {
-                    isView.toggle()
+                isView.toggle()
             }
             HStack(spacing: 0) {
                 if isView {
@@ -43,7 +42,6 @@ struct PickerKG: View {
                             }
                         }
                         .frame(width: 50)
-
                         Picker("Gramas", selection: $grama) {
                             ForEach(0..<100) {
                                 Text("\($0)")
@@ -61,12 +59,12 @@ struct PickerKG: View {
                     .pickerStyle(.wheel)
                 }
             }
-            .padding(.top,-70)
+            .padding(.top, -70)
             .overlay {
                 if isView {
-                    HStack{
+                    HStack {
                         Text(",")
-                            .padding(.top,-50)
+                            .padding(.top, -50)
                     }
                 }
             }

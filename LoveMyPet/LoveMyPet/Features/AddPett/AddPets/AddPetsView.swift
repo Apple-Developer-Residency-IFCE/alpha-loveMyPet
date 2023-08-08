@@ -10,18 +10,16 @@ struct PetsView: View {
             Spacer(minLength: 25)
             ImagePicker(text: "Escolher foto")
             PetPickerView(selectedData: Date.now)
-                List {
-                    PickerKG(isView: $isView)
-                        .listRowBackground(Color("forms_colors"))
-                        .padding(.bottom, -20)
-                    PetPicker(title: "Castrado(a)?",
-                              options: castratedOptions,
-                              selectedItem: $selectedCastrated,
-                              pickerStyle: DefaultPickerStyle())
+            List {
+                PickerKG(isView: $isView)
                     .listRowBackground(Color("forms_colors"))
-                
-                }
-            
+                    .padding(.bottom, -20)
+                PetPicker(title: "Castrado(a)?",
+                          options: castratedOptions,
+                          selectedItem: $selectedCastrated,
+                          pickerStyle: DefaultPickerStyle())
+                .listRowBackground(Color("forms_colors"))
+            }
             .padding(.top, -30)
         }
         .background(Color("backgroud_color"))
