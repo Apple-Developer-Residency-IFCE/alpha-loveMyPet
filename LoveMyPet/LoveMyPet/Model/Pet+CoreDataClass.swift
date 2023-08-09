@@ -8,8 +8,6 @@
 
 import Foundation
 import CoreData
-
-
 public class Pet: NSManagedObject {
 
 }

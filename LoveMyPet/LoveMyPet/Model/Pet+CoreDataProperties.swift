@@ -8,8 +8,6 @@
 
 import Foundation
 import CoreData
-
-
 extension Pet {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Pet> {
@@ -27,7 +25,5 @@ extension Pet {
     @NSManaged public var weight: Float
 
 }
-
-extension Pet : Identifiable {
-
-}
+extension Pet: Identifiable {
+    }

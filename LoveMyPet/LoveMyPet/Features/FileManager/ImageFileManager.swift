@@ -1,6 +1,5 @@
 import SwiftUI
 class ImageFileManager {
-    
     func loadImage(named imageName: String) -> UIImage? {
         if let image = UIImage(named: imageName) {
             return image
@@ -20,10 +19,8 @@ class ImageFileManager {
             return false
         }
     }
-    
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
-    
 }
