@@ -5,7 +5,6 @@ struct PetPicker<ComponentStyle: PickerStyle>: View {
     var options: [String]
     @Binding var selectedItem: String
     var pickerStyle: ComponentStyle
-    
     var body: some View {
         VStack {
             HStack {
@@ -30,7 +29,6 @@ struct PetPickerView: View {
     let animalOptions = ["Não escolhida", "Cachorro", "Gato", "Pássaro", "Peixe"]
     let genderOptions = ["Nenhum", "Macho", "Fêmea"]
     let raceOptions = ["Não escolhida", "Golden Retriever", "Salsicha", "Goldfish"]
-    
     var body: some View {
         VStack {
             List {
@@ -56,7 +54,6 @@ struct PetPickerView: View {
                     .environment(\.locale, Locale.init(identifier: "pt"))
                     .listRowBackground(Color("forms_colors"))
             }
-            
         }
     }
 }

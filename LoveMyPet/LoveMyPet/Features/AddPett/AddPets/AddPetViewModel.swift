@@ -32,11 +32,9 @@ class PetViewModel {
                 } catch {
                     print("Error ao salvar depois da deleção \(error)")
                 }
-            }
-            else {
+            } else {
                 hasError = true
             }
-
         }
     }
     func save() {
@@ -63,4 +61,3 @@ class PetViewModel {
         }
     }
 }
-

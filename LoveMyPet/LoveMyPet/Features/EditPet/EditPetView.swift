@@ -24,10 +24,9 @@ struct EditPetView: View {
         NavigationStack {
             VStack(spacing: 0) {
                 ImagePicker(text: "Trocar foto")
-//                    .frame(maxWidth: .infinity, alignment: .center)
+                //                    .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.top, 20)
                 List {
-                    
                     Section {
                         Text(namePet)
                             .foregroundColor(.gray)
@@ -65,7 +64,6 @@ struct EditPetView: View {
                 }
                 .frame(height: 450)
                 .scrollContentBackground(.hidden)
-                
                 RoundedRectangle(cornerRadius: 7)
                     .frame(maxWidth: 320, maxHeight: 50)
                     .overlay {
@@ -79,23 +77,19 @@ struct EditPetView: View {
                     }.alert(isPresented: $showingAlert) {
                         Alert(
                             title: Text("Deseja excluir o cadastro?"),
-                            message:  Text("Uma vez excluída, essa ação não pode ser desfeita."),
+                            message: Text("Uma vez excluída, essa ação não pode ser desfeita."),
                             primaryButton: .destructive(
                                 Text("Excluir")
                                     .foregroundColor(.red),
                                 action: {}
                             )
                             ,
-                            secondaryButton: .cancel(Text("Cancelar"))
-                            {}
+                            secondaryButton: .cancel(Text("Cancelar")) {}
                         )
                     }
                 Spacer()
-
             }
             .background(Color("backgroud_color"))
-            
-            
         }
     }
 }
