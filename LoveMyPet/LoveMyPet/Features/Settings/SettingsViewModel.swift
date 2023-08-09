@@ -15,13 +15,13 @@ class SettingsViewModel: ObservableObject {
     }
 }
 
- func getPreferredColorSheme(for theme: Theme) -> ColorScheme {
-     switch theme {
-     case .system:
-         return .light
-     case .light:
-         return .light
-     case .dark:
-         return .dark
-     }
+func getPreferredColorSheme(for theme: Theme) -> ColorScheme {
+    switch theme {
+    case .system:
+        return .light
+    case .light:
+        return .light
+    case .dark:
+        return .dark
+    }
 }

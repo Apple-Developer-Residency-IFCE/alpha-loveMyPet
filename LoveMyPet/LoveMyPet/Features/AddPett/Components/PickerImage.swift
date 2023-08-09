@@ -36,8 +36,8 @@ struct ImagePicker: View {
         }
     }
 }
-    struct ImagePicker_Previews: PreviewProvider {
-        static var previews: some View {
-            ImagePicker(text: "Escolher Foto")
-        }
+struct ImagePicker_Previews: PreviewProvider {
+    static var previews: some View {
+        ImagePicker(text: "Escolher Foto")
     }
+}
