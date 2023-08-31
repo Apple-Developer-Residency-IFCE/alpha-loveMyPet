@@ -9,6 +9,15 @@ import SwiftUI
 
 struct EditPetView: View {
     @EnvironmentObject private var vm: PetViewModel
+
+    @State private var selectedAnimal = ""
+    @State private var selectedGender = ""
+    @State private var selectedRace = ""
+    @State  var selectedData: Date
+    @State private var selectedCastrated = ""
+    @State var isView: Bool = false
+    @State var namePet: String
+    @State private var showingAlert: Bool = false
     //TODO: criar variáveis estáticas
     let castratedOptions = ["Sim", "Não"]
     let animalOptions = ["Não escolhida", "Cachorro", "Gato", "Pássaro", "Peixe"]
