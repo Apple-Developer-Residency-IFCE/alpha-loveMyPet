@@ -12,12 +12,17 @@ struct LoveMyPetApp: App {
     @State var selectedTab: Tab = .pets
     var body: some Scene {
         WindowGroup {
-            TabBarView(selectedTab: $selectedTab) {
-                SettingsView()
-            } profilesView: {
-                ProfilesView()
-            }
-                .environmentObject(settingsviewmodel)
+                TabBarView(selectedTab: $selectedTab) {
+                    NavigationStack {
+                        SettingsView()
+                    }
+                } profilesView: {
+                    NavigationStack {
+                        PetsView()
+                    }.navigationTitle("Pets")
+                }.background(Color("backgroud_color"))
+            .environmentObject(settingsviewmodel)
+            .preferredColorScheme(getPreferredColorSheme(for: settingsviewmodel.currentTheme))
         }
     }
 }

@@ -50,7 +50,7 @@ struct TabBarView_Previews: PreviewProvider {
                    settingsView: {
             SettingsView()
         }, profilesView: {
-            ProfilesView()
+            PetsView()
         })
         .environmentObject(SettingsViewModel())
     }
