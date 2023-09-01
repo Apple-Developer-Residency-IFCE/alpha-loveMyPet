@@ -19,10 +19,7 @@ struct AddPetsView: View {
                 PickerKG(weight: $vmAdd.weight, isView: $isView)
                     .listRowBackground(Color("forms_colors"))
                     .padding(.bottom, -20)
-                PetPicker(title: "Castrado(a)?",
-                          options: castratedOptions,
-                          selectedItem: $selectedCastrated,
-                          pickerStyle: DefaultPickerStyle())
+                CastratedPickerView(castratedOptions: $vmAdd.castrated)
                 .listRowBackground(Color("forms_colors"))
             }
             .padding(.top, -30)
