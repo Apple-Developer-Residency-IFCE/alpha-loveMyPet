@@ -7,10 +7,13 @@
 
 import SwiftUI
 
-struct SheetPetView: View {
+struct SheetEditPetView: View {
     @State var showSheet: Bool = false
+    let action: () -> Void
+
     var body: some View {
-        Button("Adicionar") {
+        Button("Editar") {
+            action()
             showSheet = true
         }
         .foregroundColor(Color("cancel_button"))
@@ -31,7 +34,7 @@ struct SheetPetView: View {
                                 .foregroundColor(Color("cancel_button"))
                                 Text("Adicionar Pet")
                                     .bold()
-                                Button("Adicionar") {
+                                Button("Editar") {
                                     showSheet = false
                                 }
                                 .bold()
@@ -53,6 +56,8 @@ struct SheetPetView: View {
 }
     struct SheetPetView_Previews: PreviewProvider {
         static var previews: some View {
-            SheetPetView()
+            SheetEditPetView {
+                print("")
+            }
         }
     }

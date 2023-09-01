@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct EditPetView: View {
+    @EnvironmentObject private var vm: PetViewModel
+
     @State private var selectedAnimal = ""
     @State private var selectedGender = ""
     @State private var selectedRace = ""
@@ -16,6 +18,7 @@ struct EditPetView: View {
     @State var isView: Bool = false
     @State var namePet: String
     @State private var showingAlert: Bool = false
+    //TODO: criar variáveis estáticas
     let castratedOptions = ["Sim", "Não"]
     let animalOptions = ["Não escolhida", "Cachorro", "Gato", "Pássaro", "Peixe"]
     let genderOptions = ["Nenhum", "Macho", "Fêmea"]
@@ -53,7 +56,7 @@ struct EditPetView: View {
                         .listRowBackground(Color("forms_colors"))
                     }
                     Section {
-                        PickerKG(isView: $isView)
+                        PickerKG(weight: $vm.weight,isView: $isView)
                             .listRowBackground(Color("forms_colors"))
                         PetPicker(title: "Castrado(a)?",
                                   options: castratedOptions,
@@ -97,5 +100,6 @@ struct EditPetView: View {
 struct EditPetView_Previews: PreviewProvider {
     static var previews: some View {
         EditPetView(selectedData: Date.now, namePet: "Lua")
+            .environmentObject(PetViewModel(stack: .shared))
     }
 }

@@ -21,11 +21,11 @@ struct PetPicker<ComponentStyle: PickerStyle>: View {
 }
 
 struct PetPickerView: View {
-    @State private var selectedAnimal = ""
-    @State private var selectedGender = ""
-    @State private var selectedRace = ""
-    @State private var petName = ""
-    @State  var selectedData: Date
+    @Binding var selectedAnimal: String
+    @Binding var selectedGender: String
+    @Binding var selectedRace: String
+    @Binding var petName: String
+    @Binding var selectedData: Date
     let animalOptions = ["Não escolhida", "Cachorro", "Gato", "Pássaro", "Peixe"]
     let genderOptions = ["Nenhum", "Macho", "Fêmea"]
     let raceOptions = ["Não escolhida", "Golden Retriever", "Salsicha", "Goldfish"]
@@ -61,7 +61,7 @@ struct PetPickerView: View {
 struct PetPickerView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            PetPickerView(selectedData: Date.now)
+            PetPickerView(selectedAnimal: .constant(""), selectedGender: .constant(""), selectedRace: .constant(""), petName: .constant(""), selectedData: .constant(Date.now))
         }
     }
 }

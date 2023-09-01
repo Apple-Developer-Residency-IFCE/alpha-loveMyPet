@@ -3,6 +3,7 @@ import SwiftUI
 struct Sheet: View {
     @State  var showingSheet = false
     @State var isView: Bool = false
+    @StateObject var vmSheet = PetViewModel(stack: PetProvider())
     var body: some View {
         Button("Adicionar") {
             showingSheet = true
@@ -27,6 +28,7 @@ struct Sheet: View {
                                     .bold()
                                 Button("Adicionar") {
                                     showingSheet = false
+                                    vmSheet.save()
                                 }
                                 .bold()
                                 .foregroundColor(Color("cancel_button"))
@@ -39,7 +41,7 @@ struct Sheet: View {
                         .padding(.top, -30)
                     Divider()
                         .foregroundColor(Color("backgroud_color"))
-                    PetsView(isView: isView)
+                    AddPetsView(isView: isView)
                 }
             }
         }
