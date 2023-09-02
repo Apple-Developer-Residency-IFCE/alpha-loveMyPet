@@ -36,32 +36,29 @@ struct EditPetView: View {
                             .listRowBackground(Color("forms_colors"))
                         PetPicker(title: "Gênero",
                                   options: genderOptions,
-                                  selectedItem: $selectedAnimal,
+                                  selectedItem: $vm.gender,
                                   pickerStyle: DefaultPickerStyle())
                         .listRowBackground(Color("forms_colors"))
                         PetPicker(title: "Espécie",
                                   options: animalOptions,
-                                  selectedItem: $selectedGender,
+                                  selectedItem: $vm.species,
                                   pickerStyle: DefaultPickerStyle())
                         .listRowBackground(Color("forms_colors"))
                         PetPicker(title: "Raça",
                                   options: raceOptions,
-                                  selectedItem: $selectedRace,
+                                  selectedItem: $vm.race,
                                   pickerStyle: .navigationLink)
                         .listRowBackground(Color("forms_colors"))
                         DatePicker("Nascimento:",
-                                   selection: $selectedData,
+                                   selection: $vm.date,
                                    in: ...Date(),
                                    displayedComponents: .date)
                         .listRowBackground(Color("forms_colors"))
                     }
                     Section {
-                        PickerKG(weight: $vm.weight,isView: $isView)
+                        PickerKG(weight: $vm.weight,isView: $isView,quilo: $vm.quilo,grama: $vm.gram)
                             .listRowBackground(Color("forms_colors"))
-                        PetPicker(title: "Castrado(a)?",
-                                  options: castratedOptions,
-                                  selectedItem: $selectedCastrated,
-                                  pickerStyle: DefaultPickerStyle())
+                        CastratedPickerView(castratedOptions: $vm.castrated)
                         .listRowBackground(Color("forms_colors"))
                     }
                 }

@@ -10,13 +10,8 @@ import SwiftUI
 struct PickerKG: View {
     @Binding var weight: Double
     @Binding var isView: Bool
-
-    @State private var quilo: Float = 0
-    @State private var grama: Float = 0
-
-    var quiloshow: Int { Int(weight) }
-    var gramashow: Double { Double(Int(weight * 10) % 10 ) / 10.0 }
-
+    @Binding var quilo: Int
+    @Binding var grama: Int
     let numbers = Array(0...100)
 
     var body: some View {
@@ -28,7 +23,7 @@ struct PickerKG: View {
                 Rectangle()
                     .overlay {
                         HStack {
-                            Text("\(quiloshow),\(gramashow) Kg ")
+                            Text("\(Int(quilo)),\(Int(grama)) Kg ")
                                 .foregroundColor(Color("background_text"))
                         }
                     }
@@ -81,10 +76,13 @@ struct PickerKG: View {
         }
     }
 }
-
-struct SwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        PickerKG(weight: .constant(10),
-                 isView: .constant(true))
-    }
-}
+//
+// struct SwiftUIView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PickerKG(weight: .constant(10),
+//                 isView: .constant(true),
+//                 quilo: .constant(10),
+//                 grama: .constant(10)
+//        )
+//    }
+// }

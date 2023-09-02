@@ -10,25 +10,7 @@ import SwiftUI
 class PetViewModel: ObservableObject {
     var stack: PetProvider
     private var editPet: Pet?
-    func clear () {
-        name = ""
-   
-     species = ""
-     date = Date()
-     race = ""
-    weight = 0.0
-     registered = false
-     imagepath = URL(string: "")
-     castrated = false
-     gender = ""
-    }
-    func setPetToEdit(_ pet: Pet) {
-        self.editPet = pet
-
-        self.name = pet.name ?? ""
-        // TODO: preencher todos os parâmetros utilizados na view
-    }
-
+    
     @Published var items: [Pet] = []
 
     @Published var name: String = ""
@@ -36,20 +18,19 @@ class PetViewModel: ObservableObject {
     @Published var date: Date = Date()
     @Published var race: String = ""
     @Published var weight: Double = 0.0
+    @Published var quilo: Int = 0
+    @Published var gram: Int = 0
     @Published var registered: Bool = false
     @Published var imagepath: URL? = URL(string: "")
     @Published var castrated: Bool = false
     @Published var gender: String = ""
 
-    // @FetchRequest(entity: Pet.entity(), sortDescriptors: [])
-    // var items: FetchedResults<Pet>
-
     var hasError: Bool = false
     init(stack: PetProvider, editPet: Pet? = nil) {
         self.stack = stack
     }
-
-    func fetchTasks() {
+    
+    func fetchPet() {
         let request = NSFetchRequest<Pet>(entityName: "Pet")
         do {
             items = try stack.viewContext.fetch(request)
@@ -57,20 +38,6 @@ class PetViewModel: ObservableObject {
             print("error fetching. \(error)")
         }
     }
-    func addPet() {
-        let newPet = Pet(context: stack.viewContext)
-        newPet.gender = gender
-        newPet.name = name
-        newPet.species = species
-        newPet.date = date
-        newPet.race = race
-        newPet.weight = weight
-        newPet.registered = registered
-        newPet.imagepath = imagepath
-        newPet.castrated = castrated
-        save()
-    }
-
     func delete() {
         do {
             if let editPet = editPet {
@@ -86,7 +53,7 @@ class PetViewModel: ObservableObject {
             }
         }
     }
-
+    
     func save() {
         var pet: Pet
         if let editPet = editPet {
@@ -95,22 +62,51 @@ class PetViewModel: ObservableObject {
             pet = Pet(context: stack.viewContext)
             pet.id = UUID()
         }
-
+        
         pet.gender = gender
         pet.name = name
         pet.species = species
         pet.date = date
         pet.race = race
-        pet.weight = weight
+        pet.weight = (Double(quilo)) + (Double(Double(Int(gram * 10) % 10 ) / 10.0 ))
         pet.registered = registered
         pet.imagepath = imagepath
         pet.castrated = castrated
-
+        
         do {
             try stack.viewContext.save()
         } catch {
             print("Error para salvar o pet: \(error)")
             hasError = true
         }
+    }
+    func clear () {
+        name = ""
+        species = ""
+        date = Date()
+        race = ""
+        weight = 0.0
+        registered = false
+        imagepath = URL(string: "")
+        castrated = false
+        gender = ""
+        quilo = 0
+        gram = 0
+    }
+    func setPetToEdit(_ pet: Pet) {
+        self.editPet = pet
+        self.name = pet.name ?? ""
+        self.gender = pet.gender ?? ""
+        self.species = pet.species ?? ""
+        self.imagepath = pet.imagepath ?? URL(string: "")
+        self.castrated = pet.castrated
+        self.race = pet.race ?? ""
+        self.weight = pet.weight
+        self.quilo = Int(pet.weight)
+        self.gram = Int((pet.weight - Double(quilo)) * 10)
+        self.registered = pet.registered
+        self.date = pet.date ?? Date()
+      //  self.quilo = Int(pet.weight)
+       // self.gram = Int(
     }
 }

@@ -4,7 +4,7 @@ struct AddPetsView: View {
     @State var isView: Bool = false
     @State private var selectedCastrated = ""
     @State private var petname = ""
-    @StateObject var vmAdd = PetViewModel(stack: PetProvider())
+    @EnvironmentObject private var vmAdd: PetViewModel
     let castratedOptions = ["Sim", "Não"]
     var body: some View {
         VStack {
@@ -16,13 +16,10 @@ struct AddPetsView: View {
                            petName: $vmAdd.name,
                            selectedData: $vmAdd.date)
             List {
-                PickerKG(weight: $vmAdd.weight, isView: $isView)
+                PickerKG(weight: $vmAdd.weight, isView: $isView, quilo: $vmAdd.quilo, grama: $vmAdd.gram )
                     .listRowBackground(Color("forms_colors"))
                     .padding(.bottom, -20)
-                PetPicker(title: "Castrado(a)?",
-                          options: castratedOptions,
-                          selectedItem: $selectedCastrated,
-                          pickerStyle: DefaultPickerStyle())
+                CastratedPickerView(castratedOptions: $vmAdd.castrated)
                 .listRowBackground(Color("forms_colors"))
             }
             .padding(.top, -30)
@@ -37,6 +34,7 @@ struct PetsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             AddPetsView()
+                .environmentObject(PetViewModel(stack: .shared))
         }
     }
 }
