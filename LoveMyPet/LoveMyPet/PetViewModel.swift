@@ -106,7 +106,5 @@ class PetViewModel: ObservableObject {
         self.gram = Int((pet.weight - Double(quilo)) * 10)
         self.registered = pet.registered
         self.date = pet.date ?? Date()
-      //  self.quilo = Int(pet.weight)
-       // self.gram = Int(
     }
 }

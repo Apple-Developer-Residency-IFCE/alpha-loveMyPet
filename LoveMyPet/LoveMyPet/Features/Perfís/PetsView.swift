@@ -6,6 +6,8 @@
 
 import SwiftUI
 
+
+
 struct PetsView: View {
     @State var hasPet: Bool = false
     @State var sheetShow: Bool = false
@@ -20,7 +22,7 @@ struct PetsView: View {
                 List {
                     ForEach(vmPetsView.items, id: \.self) { pet in
                         CardView(
-                            imagepet: try? Data(contentsOf: pet.imagepath ?? URL(string: "")!),
+                            imagepet: Data(contentsOfOptionalURL: pet.imagepath),
                             name: pet.name ?? "",
                             specie: pet.species ?? "")
                     }
