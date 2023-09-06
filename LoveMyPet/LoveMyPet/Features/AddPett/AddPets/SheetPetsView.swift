@@ -30,6 +30,7 @@ struct Sheet: View {
                                 Button("Adicionar") {
                                     showingSheet = false
                                     vmSheet.save()
+                                    vmSheet.fetchPet()
                                 }
                                 .bold()
                                 .foregroundColor(Color("cancel_button"))
