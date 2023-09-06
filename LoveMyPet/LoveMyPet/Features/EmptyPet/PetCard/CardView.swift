@@ -4,6 +4,7 @@ struct CardView: View {
     @State var name: String = "Bud"
     @State var specie: String = "Husky Siberiano"
     var body: some View {
+
         HStack(spacing: 16) {
             if let uiimage = UIImage(data: imagepet ?? Data()){
                 let image = Image(uiImage: uiimage)
@@ -15,17 +16,19 @@ struct CardView: View {
                 Text(name)
                     .bold()
                 Text(specie)
-            }
+            }.background(Color("backgroud_color"))
             Spacer()
             Image("arrow_icon")
                 .foregroundColor(.gray)
-        }
+        }.background(Color("backgroud_color"))
         .padding(40)
         .overlay(
             RoundedRectangle(cornerRadius: 12)
                 .stroke(lineWidth: 2)
                 .foregroundColor(Color("borders_color"))
-                .frame(width: 350, height: 100))
+                .frame(width: 350, height: 100)
+            )
+                .background(Color("backgroud_color"))
     }
 }
 //struct CardView_Previews: PreviewProvider {

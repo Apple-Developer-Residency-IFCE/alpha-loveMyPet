@@ -10,23 +10,29 @@ struct PetsView: View {
     @State var hasPet: Bool = false
     @State var sheetShow: Bool = false
     @State var imagePet: [Image] = [Image]()
-    @StateObject var viewmodel = PetViewModel(stack: PetProvider())
-
+    @StateObject var vmPetsView = PetViewModel(stack: .shared)
     var body: some View {
         VStack {
-            if viewmodel.items.isEmpty {
+            if vmPetsView.items.isEmpty {
                 EmptyCard()
                 Spacer()
             } else {
                 List {
-                    ForEach(viewmodel.items, id: \.self) { pet in
+                    ForEach(vmPetsView.items, id: \.self) { pet in
                         CardView(
-                            imagepet: try? Data(contentsOf: pet.imagepath!),
-                            name: pet.name!,
-                            specie: pet.species!)
+                            imagepet: Data(contentsOfOptionalURL: pet.imagepath),
+                            name: pet.name ?? "",
+                            specie: pet.species ?? "")
                     }
+                    .listRowBackground(Color("backgroud_color"))
                 }
+                
+                .background(.clear)
+                .scrollContentBackground(.hidden)
             }
+        }
+        .onAppear {
+            vmPetsView.fetchPet()
         }
         .frame(maxWidth: .infinity)
         .background(Color("backgroud_color"))
@@ -37,7 +43,7 @@ struct PetsView: View {
                     Sheet()
             }
         }
-        .environmentObject(viewmodel)
+        .environmentObject(vmPetsView)
     }
 }
 
@@ -45,6 +51,8 @@ struct ProfilesView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             PetsView()
+                .environmentObject(PetViewModel(stack: .shared))
+                
             }
     }
 }

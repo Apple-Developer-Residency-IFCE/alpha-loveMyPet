@@ -3,14 +3,14 @@ import SwiftUI
 struct Sheet: View {
     @State  var showingSheet = false
     @State var isView: Bool = false
-    @StateObject var vmSheet = PetViewModel(stack: PetProvider())
+    @EnvironmentObject private var vmSheet: PetViewModel
     var body: some View {
         Button("Adicionar") {
             showingSheet = true
         }
         .foregroundColor(Color("cancel_button"))
         .bold()
-        .sheet(isPresented: $showingSheet) {
+        .sheet(isPresented: $showingSheet,onDismiss: vmSheet.clear) {
             NavigationStack {
                 VStack(spacing: -15) {
                     Rectangle()
@@ -22,6 +22,7 @@ struct Sheet: View {
                             HStack(spacing: 50) {
                                 Button("Cancelar") {
                                     showingSheet = false
+                                    vmSheet.clear()
                                 }
                                 .foregroundColor(Color("cancel_button"))
                                 Text("Adicionar Pet")
@@ -29,6 +30,7 @@ struct Sheet: View {
                                 Button("Adicionar") {
                                     showingSheet = false
                                     vmSheet.save()
+                                    vmSheet.fetchPet()
                                 }
                                 .bold()
                                 .foregroundColor(Color("cancel_button"))
