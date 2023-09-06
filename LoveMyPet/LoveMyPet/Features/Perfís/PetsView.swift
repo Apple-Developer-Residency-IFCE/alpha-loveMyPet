@@ -6,8 +6,6 @@
 
 import SwiftUI
 
-
-
 struct PetsView: View {
     @State var hasPet: Bool = false
     @State var sheetShow: Bool = false
@@ -26,7 +24,11 @@ struct PetsView: View {
                             name: pet.name ?? "",
                             specie: pet.species ?? "")
                     }
+                    .listRowBackground(Color("backgroud_color"))
                 }
+                
+                .background(.clear)
+                .scrollContentBackground(.hidden)
             }
         }
         .onAppear {
