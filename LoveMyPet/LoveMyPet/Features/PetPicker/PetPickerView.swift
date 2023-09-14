@@ -37,12 +37,12 @@ struct PetPickerView: View {
                     .listRowBackground(Color("forms_colors"))
                 PetPicker(title: "Gênero",
                           options: genderOptions,
-                          selectedItem: $selectedAnimal,
+                          selectedItem: $selectedGender,
                           pickerStyle: DefaultPickerStyle())
                 .listRowBackground(Color("forms_colors"))
                 PetPicker(title: "Espécie",
                           options: animalOptions,
-                          selectedItem: $selectedGender,
+                          selectedItem: $selectedAnimal,
                           pickerStyle: DefaultPickerStyle())
                 .listRowBackground(Color("forms_colors"))
                 PetPicker(title: "Raça",

@@ -11,6 +11,7 @@ struct PetsView: View {
     @State var sheetShow: Bool = false
     @State var imagePet: [Image] = [Image]()
     @StateObject var vmPetsView = PetViewModel(stack: .shared)
+
     var body: some View {
         VStack {
             if vmPetsView.items.isEmpty {
@@ -19,20 +20,27 @@ struct PetsView: View {
             } else {
                 List {
                     ForEach(vmPetsView.items, id: \.self) { pet in
-                        CardView(
-                            imagepet: Data(contentsOfOptionalURL: pet.imagepath),
-                            name: pet.name ?? "",
-                            specie: pet.species ?? "")
+                        NavigationLink {
+                            PetDetails()
+                                .environmentObject(vmPetsView)
+                                .onAppear {
+                                    vmPetsView.setPetToEdit(pet)
+                                }
+                        } label: {
+                            CardView(imagepet: Data(contentsOfOptionalURL: pet.imagepath),
+                                     name: pet.name ?? "",
+                                     specie: pet.species ?? "")
+                        }
                     }
                     .listRowBackground(Color("backgroud_color"))
                 }
-                
                 .background(.clear)
                 .scrollContentBackground(.hidden)
             }
         }
         .onAppear {
             vmPetsView.fetchPet()
+            vmPetsView.clear()
         }
         .frame(maxWidth: .infinity)
         .background(Color("backgroud_color"))
@@ -41,12 +49,11 @@ struct PetsView: View {
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Sheet()
+                    .environmentObject(vmPetsView)
             }
         }
-        .environmentObject(vmPetsView)
     }
 }
-
 struct ProfilesView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {

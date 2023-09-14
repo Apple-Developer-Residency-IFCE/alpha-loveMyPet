@@ -31,7 +31,7 @@ struct EditPetView: View {
                     .padding(.top, 20)
                 List {
                     Section {
-                        Text(namePet)
+                        Text(vm.name)
                             .foregroundColor(.gray)
                             .listRowBackground(Color("forms_colors"))
                         PetPicker(title: "Gênero",
@@ -74,6 +74,7 @@ struct EditPetView: View {
                     .foregroundColor(.red)
                     .onTapGesture {
                         showingAlert = true
+                        
                     }.alert(isPresented: $showingAlert) {
                         Alert(
                             title: Text("Deseja excluir o cadastro?"),
@@ -81,7 +82,9 @@ struct EditPetView: View {
                             primaryButton: .destructive(
                                 Text("Excluir")
                                     .foregroundColor(.red),
-                                action: {}
+                                action: {
+                                    vm.delete()
+                                }
                             )
                             ,
                             secondaryButton: .cancel(Text("Cancelar")) {}
