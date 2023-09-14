@@ -19,6 +19,8 @@ struct LoveMyPetApp: App {
                 } profilesView: {
                     NavigationStack {
                         PetsView()
+                     // PetDetails()
+                            
                     }.navigationTitle("Pets")
                 }.background(Color("backgroud_color"))
             .environmentObject(settingsviewmodel)
