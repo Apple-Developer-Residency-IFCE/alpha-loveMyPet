@@ -10,7 +10,7 @@ struct Sheet: View {
         }
         .foregroundColor(Color("cancel_button"))
         .bold()
-        .sheet(isPresented: $showingSheet,onDismiss: vmSheet.clear) {
+        .sheet(isPresented: $showingSheet, onDismiss: vmSheet.clear) {
             NavigationStack {
                 VStack(spacing: -15) {
                     Rectangle()

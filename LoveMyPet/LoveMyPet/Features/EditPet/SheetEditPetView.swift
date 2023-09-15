@@ -33,11 +33,12 @@ struct SheetEditPetView: View {
                                     showSheet = false
                                 }
                                 .foregroundColor(Color("cancel_button"))
-                                Text("Adicionar Pet")
+                                Text("Editar Pet")
                                     .bold()
-                                Button("Editar") {
+                                Button("Salvar") {
                                     showSheet = false
                                     vmEditPet.save()
+                                  //  vmEditPet.fetchPet()
                                 }
                                 .bold()
                                 .foregroundColor(Color("cancel_button"))

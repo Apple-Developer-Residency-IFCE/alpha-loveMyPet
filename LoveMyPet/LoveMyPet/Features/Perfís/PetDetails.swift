@@ -1,6 +1,4 @@
 import SwiftUI
-// como saber que  um pet é aquele especifico
-// se ja tem ligaçao pq o enviromentobject nao funciona
 struct PetDetails: View {
     @EnvironmentObject var vmShowPet: PetViewModel
     var dataFormatter: DateFormatter = {
@@ -17,10 +15,10 @@ struct PetDetails: View {
         let currenDate = vmShowPet.date
         let formattedDate = dataFormatter.string(from: currenDate)
         VStack(spacing: 30) {
+            Color("backgroud_color")
             Image("static_pet")
                 .resizable()
-                .frame(height: 194)
-                .padding(.top, -140)
+                .frame(height: 230)
             HStack {
                 VStack(alignment: .leading, spacing: 16) {
                     HStack {
@@ -83,6 +81,8 @@ struct PetDetails: View {
                 .padding(EdgeInsets(top: 10, leading: 24, bottom: 0, trailing: 24))
             }
         }
+        .padding(.bottom, 100)
+        .background(Color("backgroud_color"))
         .navigationTitle("Informações do pet")
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {

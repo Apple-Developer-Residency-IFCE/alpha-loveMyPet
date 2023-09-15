@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EditPetView: View {
     @EnvironmentObject private var vm: PetViewModel
-
+    
     @State private var selectedAnimal = ""
     @State private var selectedGender = ""
     @State private var selectedRace = ""
@@ -56,10 +56,10 @@ struct EditPetView: View {
                         .listRowBackground(Color("forms_colors"))
                     }
                     Section {
-                        PickerKG(weight: $vm.weight,isView: $isView,quilo: $vm.quilo,grama: $vm.gram)
+                        PickerKG(weight: $vm.weight, isView: $isView, quilo: $vm.quilo, grama: $vm.gram)
                             .listRowBackground(Color("forms_colors"))
                         CastratedPickerView(castratedOptions: $vm.castrated)
-                        .listRowBackground(Color("forms_colors"))
+                            .listRowBackground(Color("forms_colors"))
                     }
                 }
                 .frame(height: 450)
@@ -74,8 +74,7 @@ struct EditPetView: View {
                     .foregroundColor(.red)
                     .onTapGesture {
                         showingAlert = true
-                        
-                    }.alert(isPresented: $showingAlert) {
+                    }.alert(isPresented: $showingAlert){
                         Alert(
                             title: Text("Deseja excluir o cadastro?"),
                             message: Text("Uma vez excluída, essa ação não pode ser desfeita."),
