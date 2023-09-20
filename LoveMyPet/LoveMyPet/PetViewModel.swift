@@ -1,16 +1,13 @@
-//
-//  TesteViewModel.swift
-//  TestesdoAppPets
-//
-//  Created by userext on 04/08/23.
-//
 import CoreData
 import SwiftUI
-
+import PhotosUI
 class PetViewModel: ObservableObject {
     var stack: PetProvider
+    var imageFileManager: ImageFileManager
+
     private var editPet: Pet?
-    
+    @Published var imageData: Data?
+
     @Published var items: [Pet] = []
 
     @Published var name: String = ""
@@ -21,15 +18,14 @@ class PetViewModel: ObservableObject {
     @Published var quilo: Int = 0
     @Published var gram: Int = 0
     @Published var registered: Bool = false
-    @Published var imagepath: URL? = URL(string: "")
     @Published var castrated: Bool = false
     @Published var gender: String = ""
 
     var hasError: Bool = false
-    init(stack: PetProvider, editPet: Pet? = nil) {
+    init(stack: PetProvider, editPet: Pet? = nil, imageFileManager: ImageFileManager) {
         self.stack = stack
+        self.imageFileManager = imageFileManager
     }
-    
     func fetchPet() {
         let request = NSFetchRequest<Pet>(entityName: "Pet")
         do {
@@ -53,8 +49,10 @@ class PetViewModel: ObservableObject {
             }
         }
     }
-    
-    func save() {
+    func loadImage(name: String) -> Data? {
+        imageFileManager.loadImage(named: name)
+    }
+    func save() async {
         var pet: Pet
         if let editPet = editPet {
             pet = editPet
@@ -62,7 +60,13 @@ class PetViewModel: ObservableObject {
             pet = Pet(context: stack.viewContext)
             pet.id = UUID()
         }
-        
+        guard let data = self.imageData,
+              imageFileManager.saveImage(imageData: data, withName: pet.id!.uuidString)
+        else {
+            clear()
+            return
+        }
+
         pet.gender = gender
         pet.name = name
         pet.species = species
@@ -70,7 +74,6 @@ class PetViewModel: ObservableObject {
         pet.race = race
         pet.weight = (Double(quilo)) + (Double(Double(Int(gram * 10) % 10 ) / 10.0 ))
         pet.registered = registered
-        pet.imagepath = imagepath
         pet.castrated = castrated
         
         do {
@@ -79,26 +82,31 @@ class PetViewModel: ObservableObject {
             print("Error para salvar o pet: \(error)")
             hasError = true
         }
+
+        clear()
     }
+
     func clear () {
         name = ""
         species = ""
-        date = Date()
+        DispatchQueue.main.async {
+            self.date = Date()
+        }
         race = ""
         weight = 0.0
         registered = false
-        imagepath = URL(string: "")
         castrated = false
         gender = ""
         quilo = 0
         gram = 0
+        imageData = nil
     }
+
     func setPetToEdit(_ pet: Pet) {
         self.editPet = pet
         self.name = pet.name ?? ""
         self.gender = pet.gender ?? ""
         self.species = pet.species ?? ""
-        self.imagepath = pet.imagepath ?? URL(string: "")
         self.castrated = pet.castrated
         self.race = pet.race ?? ""
         self.weight = pet.weight
@@ -106,5 +114,6 @@ class PetViewModel: ObservableObject {
         self.gram = Int((pet.weight - Double(quilo)) * 10)
         self.registered = pet.registered
         self.date = pet.date ?? Date()
+        self.imageData = self.loadImage(name: pet.id!.uuidString)
     }
 }

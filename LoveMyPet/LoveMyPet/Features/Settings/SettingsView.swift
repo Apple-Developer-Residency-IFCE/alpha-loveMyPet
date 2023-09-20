@@ -33,8 +33,7 @@ struct SettingsView: View {
             .padding(.bottom, 350)
         }
         .background(Color("backgroud_color"))
-        
-    }
+        }
     struct SettingsView_Previews: PreviewProvider {
         static var previews: some View {
             SettingsView()

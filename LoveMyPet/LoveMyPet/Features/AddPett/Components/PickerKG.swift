@@ -43,7 +43,7 @@ struct PickerKG: View {
                                 Text("\($0)")
                             }
                         }
-                        .onChange(of: quilo, perform: { newValue in
+                        .onChange(of: quilo, perform: { _ in
                             self.weight = Double(quilo) + Double(grama)
                         })
                         .frame(width: 50)

@@ -11,14 +11,19 @@ struct PetDetails: View {
         numberFormatter.maximumFractionDigits = 1
         return numberFormatter.string(from: NSNumber(value: vmShowPet.weight)) ?? ""
     }
+
     var body: some View {
         let currenDate = vmShowPet.date
         let formattedDate = dataFormatter.string(from: currenDate)
+
         VStack(spacing: 30) {
             Color("backgroud_color")
-            Image("static_pet")
-                .resizable()
-                .frame(height: 230)
+            if let data = vmShowPet.imageData {
+                Image(data: data)
+                    .resizable()
+                    .frame(height: 230)
+            }
+       
             HStack {
                 VStack(alignment: .leading, spacing: 16) {
                     HStack {
@@ -82,6 +87,7 @@ struct PetDetails: View {
             }
         }
         .padding(.bottom, 100)
+        .environmentObject(vmShowPet)
         .background(Color("backgroud_color"))
         .navigationTitle("Informações do pet")
         .toolbar {
@@ -95,6 +101,6 @@ struct PetDetails: View {
 struct PetDetails_Previews: PreviewProvider {
     static var previews: some View {
         PetDetails()
-            .environmentObject(PetViewModel(stack: .shared))
+            .environmentObject(PetViewModel(stack: .shared, imageFileManager: .init()))
     }
 }

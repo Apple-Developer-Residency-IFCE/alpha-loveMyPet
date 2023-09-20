@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Sheet: View {
+struct SheetAddPet: View {
     @State  var showingSheet = false
     @State var isView: Bool = false
     @EnvironmentObject private var vmSheet: PetViewModel
@@ -29,7 +29,7 @@ struct Sheet: View {
                                     .bold()
                                 Button("Adicionar") {
                                     showingSheet = false
-                                    vmSheet.save()
+                                    Task { await vmSheet.save()}
                                     vmSheet.fetchPet()
                                 }
                                 .bold()
@@ -53,7 +53,7 @@ struct Sheet: View {
 struct Sheet_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            Sheet()
+            SheetAddPet()
         }
     }
 }

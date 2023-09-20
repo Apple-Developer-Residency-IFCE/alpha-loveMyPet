@@ -9,7 +9,6 @@ import SwiftUI
 
 struct EditPetView: View {
     @EnvironmentObject private var vm: PetViewModel
-    
     @State private var selectedAnimal = ""
     @State private var selectedGender = ""
     @State private var selectedRace = ""
@@ -26,7 +25,8 @@ struct EditPetView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                ImagePicker(text: "Trocar foto")
+                ImagePicker(text: "Trocar foto",
+                            imageData: $vm.imageData)
                 //                    .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.top, 20)
                 List {
@@ -74,7 +74,7 @@ struct EditPetView: View {
                     .foregroundColor(.red)
                     .onTapGesture {
                         showingAlert = true
-                    }.alert(isPresented: $showingAlert){
+                    }.alert(isPresented: $showingAlert) {
                         Alert(
                             title: Text("Deseja excluir o cadastro?"),
                             message: Text("Uma vez excluída, essa ação não pode ser desfeita."),
@@ -99,6 +99,6 @@ struct EditPetView: View {
 struct EditPetView_Previews: PreviewProvider {
     static var previews: some View {
         EditPetView(selectedData: Date.now, namePet: "Lua")
-            .environmentObject(PetViewModel(stack: .shared))
+            .environmentObject(PetViewModel(stack: .shared, imageFileManager: .init()))
     }
 }

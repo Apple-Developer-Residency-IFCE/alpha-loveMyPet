@@ -37,7 +37,7 @@ struct SheetEditPetView: View {
                                     .bold()
                                 Button("Salvar") {
                                     showSheet = false
-                                    vmEditPet.save()
+                                    Task { await vmEditPet.save()}
                                   //  vmEditPet.fetchPet()
                                 }
                                 .bold()

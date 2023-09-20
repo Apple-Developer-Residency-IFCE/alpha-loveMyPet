@@ -2,9 +2,10 @@ import PhotosUI
 import SwiftUI
 
 struct ImagePicker: View {
-    @State private var avatarItem: PhotosPickerItem?
-    @State private var avatarImage: Image?
     @State var text: String
+    @Binding var imageData: Data?
+    @State private var avatarItem: PhotosPickerItem? = .init(itemIdentifier: UUID().uuidString)
+
     var body: some View {
         PhotosPicker(selection: $avatarItem, matching: .images) {
             ZStack {
@@ -15,29 +16,37 @@ struct ImagePicker: View {
                     Text(text)
                         .foregroundColor(Color("background_text"))
                 }
-                avatarImage?
-                    .resizable()
-                    .frame(width: 64, height: 64)
-                    .scaledToFit()
-                    .cornerRadius(100)
-                    .padding(.bottom, 30)
+
+                if let imageData = imageData {
+                    Image(data: imageData)
+                        .resizable()
+                        .frame(width: 64, height: 64)
+                        .scaledToFit()
+                        .cornerRadius(100)
+                        .padding(.bottom, 30)
+                }
             }
         }
         .onChange(of: avatarItem) { _ in
             Task {
-                if let data = try? await avatarItem?.loadTransferable(type: Data.self) {
-                    if let uiImage = UIImage(data: data) {
-                        avatarImage = Image(uiImage: uiImage)
-                        return
-                    }
+                let loadedData = try? await avatarItem?.loadTransferable(type: Data.self)
+                DispatchQueue.main.async {
+                    self.imageData = loadedData
                 }
-                print("Failed")
             }
         }
     }
 }
 struct ImagePicker_Previews: PreviewProvider {
     static var previews: some View {
-        ImagePicker(text: "Escolher Foto")
+        ImagePicker(text: "Escolher Foto",
+                    imageData: .constant(.none))
+    }
+}
+
+
+extension Image {
+    init(data: Data) {
+        self.init(uiImage: UIImage(data: data)!)
     }
 }

@@ -9,12 +9,13 @@ struct AddPetsView: View {
     var body: some View {
         VStack {
             Spacer(minLength: 25)
-            ImagePicker(text: "Escolher foto")
-                PetPickerView(selectedAnimal: $vmAdd.species,
-                           selectedGender: $vmAdd.gender,
-                           selectedRace: $vmAdd.race,
-                           petName: $vmAdd.name,
-                           selectedData: $vmAdd.date)
+            ImagePicker(text: "Escolher foto",
+                        imageData: $vmAdd.imageData)
+            PetPickerView(selectedAnimal: $vmAdd.species,
+                       selectedGender: $vmAdd.gender,
+                       selectedRace: $vmAdd.race,
+                       petName: $vmAdd.name,
+                       selectedData: $vmAdd.date)
             List {
                 PickerKG(weight: $vmAdd.weight, isView: $isView, quilo: $vmAdd.quilo, grama: $vmAdd.gram )
                     .listRowBackground(Color("forms_colors"))
@@ -34,7 +35,7 @@ struct PetsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             AddPetsView()
-                .environmentObject(PetViewModel(stack: .shared))
+                .environmentObject(PetViewModel(stack: .shared, imageFileManager: .init()))
         }
     }
 }
