@@ -12,19 +12,18 @@ struct LoveMyPetApp: App {
     @State var selectedTab: Tab = .pets
     var body: some Scene {
         WindowGroup {
-                TabBarView(selectedTab: $selectedTab) {
-                    NavigationStack {
-                        SettingsView()
-                    }
-                } profilesView: {
-                    NavigationStack {
-                        PetsView()
-                     // PetDetails()
-                            
-                    }.navigationTitle("Pets")
-                }.background(Color("backgroud_color"))
-            .environmentObject(settingsviewmodel)
-            .preferredColorScheme(getPreferredColorSheme(for: settingsviewmodel.currentTheme))
+            TabBarView(selectedTab: $selectedTab) {
+                NavigationStack {
+                    SettingsView()
+                }
+            } profilesView: {
+                NavigationStack {
+                    PetsView(imageFileManager: ImageFileManager())
+                    // PetDetails()
+                }.navigationTitle("Pets")
+            }.background(Color("backgroud_color"))
+                .environmentObject(settingsviewmodel)
+                .preferredColorScheme(getPreferredColorSheme(for: settingsviewmodel.currentTheme))
         }
     }
 }

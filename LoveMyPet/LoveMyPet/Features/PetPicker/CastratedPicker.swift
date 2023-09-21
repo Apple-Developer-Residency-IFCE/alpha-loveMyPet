@@ -8,10 +8,8 @@ struct CastratedPickerView: View {
                     Text("Não").tag(false)
                 }
                 .pickerStyle(DefaultPickerStyle())
-                //.listRowBackground(Color("forms_colors"))
             }
-        
-    }
+        }
 }
 struct CastratedPickerView_Previews: PreviewProvider {
     static var previews: some View {

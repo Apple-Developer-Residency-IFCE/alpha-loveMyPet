@@ -18,7 +18,6 @@ struct EmptyCard: View {
                 Text("adicionado :(")
             }
             .foregroundColor(.gray)
-            
         }.background(Color("backgroud_color"))
     }
 }

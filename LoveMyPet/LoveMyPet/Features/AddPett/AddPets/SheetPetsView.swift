@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Sheet: View {
+struct SheetAddPet: View {
     @State  var showingSheet = false
     @State var isView: Bool = false
     @EnvironmentObject private var vmSheet: PetViewModel
@@ -10,7 +10,10 @@ struct Sheet: View {
         }
         .foregroundColor(Color("cancel_button"))
         .bold()
-        .sheet(isPresented: $showingSheet,onDismiss: vmSheet.clear) {
+        .sheet(isPresented: $showingSheet, onDismiss: {
+            vmSheet.clear()
+            vmSheet.fetchPet()
+        }) {
             NavigationStack {
                 VStack(spacing: -15) {
                     Rectangle()
@@ -29,13 +32,13 @@ struct Sheet: View {
                                     .bold()
                                 Button("Adicionar") {
                                     showingSheet = false
-                                    vmSheet.save()
+                                    Task { await vmSheet.save()}
                                     vmSheet.fetchPet()
                                 }
                                 .bold()
                                 .foregroundColor(Color("cancel_button"))
                             }
-                                .padding(.top, -30))
+                        .padding(.top, -30))
                         .frame(height: 100)
                     Rectangle()
                         .frame(width: 400, height: 0.5)
@@ -53,7 +56,7 @@ struct Sheet: View {
 struct Sheet_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            Sheet()
+            SheetAddPet()
         }
     }
 }

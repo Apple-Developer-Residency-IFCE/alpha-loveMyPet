@@ -43,15 +43,3 @@ enum Tab: String {
     case pets = "Pets"
     case settings = "Configurações"
 }
-
-struct TabBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        TabBarView(selectedTab: .constant(.pets),
-                   settingsView: {
-            SettingsView()
-        }, profilesView: {
-            PetsView()
-        })
-        .environmentObject(SettingsViewModel())
-    }
-}

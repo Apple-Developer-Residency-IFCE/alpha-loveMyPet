@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct EditPetView: View {
-    @EnvironmentObject private var vm: PetViewModel
-
+    @EnvironmentObject private var vmodel: PetViewModel
     @State private var selectedAnimal = ""
     @State private var selectedGender = ""
     @State private var selectedRace = ""
@@ -18,7 +17,6 @@ struct EditPetView: View {
     @State var isView: Bool = false
     @State var namePet: String
     @State private var showingAlert: Bool = false
-    //TODO: criar variáveis estáticas
     let castratedOptions = ["Sim", "Não"]
     let animalOptions = ["Não escolhida", "Cachorro", "Gato", "Pássaro", "Peixe"]
     let genderOptions = ["Nenhum", "Macho", "Fêmea"]
@@ -26,40 +24,40 @@ struct EditPetView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                ImagePicker(text: "Trocar foto")
-                //                    .frame(maxWidth: .infinity, alignment: .center)
+                ImagePicker(text: "Trocar foto",
+                            imageData: $vmodel.imageData)
                     .padding(.top, 20)
                 List {
                     Section {
-                        Text(vm.name)
+                        Text(vmodel.name)
                             .foregroundColor(.gray)
                             .listRowBackground(Color("forms_colors"))
                         PetPicker(title: "Gênero",
                                   options: genderOptions,
-                                  selectedItem: $vm.gender,
+                                  selectedItem: $vmodel.gender,
                                   pickerStyle: DefaultPickerStyle())
                         .listRowBackground(Color("forms_colors"))
                         PetPicker(title: "Espécie",
                                   options: animalOptions,
-                                  selectedItem: $vm.species,
+                                  selectedItem: $vmodel.species,
                                   pickerStyle: DefaultPickerStyle())
                         .listRowBackground(Color("forms_colors"))
                         PetPicker(title: "Raça",
                                   options: raceOptions,
-                                  selectedItem: $vm.race,
+                                  selectedItem: $vmodel.race,
                                   pickerStyle: .navigationLink)
                         .listRowBackground(Color("forms_colors"))
                         DatePicker("Nascimento:",
-                                   selection: $vm.date,
+                                   selection: $vmodel.date,
                                    in: ...Date(),
                                    displayedComponents: .date)
                         .listRowBackground(Color("forms_colors"))
                     }
                     Section {
-                        PickerKG(weight: $vm.weight,isView: $isView,quilo: $vm.quilo,grama: $vm.gram)
+                        PickerKG(weight: $vmodel.weight, isView: $isView, quilo: $vmodel.quilo, grama: $vmodel.gram)
                             .listRowBackground(Color("forms_colors"))
-                        CastratedPickerView(castratedOptions: $vm.castrated)
-                        .listRowBackground(Color("forms_colors"))
+                        CastratedPickerView(castratedOptions: $vmodel.castrated)
+                            .listRowBackground(Color("forms_colors"))
                     }
                 }
                 .frame(height: 450)
@@ -74,7 +72,6 @@ struct EditPetView: View {
                     .foregroundColor(.red)
                     .onTapGesture {
                         showingAlert = true
-                        
                     }.alert(isPresented: $showingAlert) {
                         Alert(
                             title: Text("Deseja excluir o cadastro?"),
@@ -83,7 +80,7 @@ struct EditPetView: View {
                                 Text("Excluir")
                                     .foregroundColor(.red),
                                 action: {
-                                    vm.delete()
+                                    vmodel.delete()
                                 }
                             )
                             ,
@@ -100,6 +97,6 @@ struct EditPetView: View {
 struct EditPetView_Previews: PreviewProvider {
     static var previews: some View {
         EditPetView(selectedData: Date.now, namePet: "Lua")
-            .environmentObject(PetViewModel(stack: .shared))
+            .environmentObject(PetViewModel(stack: .shared, imageFileManager: .init()))
     }
 }

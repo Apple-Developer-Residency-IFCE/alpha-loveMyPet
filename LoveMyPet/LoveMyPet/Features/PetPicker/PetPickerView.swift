@@ -57,11 +57,3 @@ struct PetPickerView: View {
         }
     }
 }
-
-struct PetPickerView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            PetPickerView(selectedAnimal: .constant(""), selectedGender: .constant(""), selectedRace: .constant(""), petName: .constant(""), selectedData: .constant(Date.now))
-        }
-    }
-}
