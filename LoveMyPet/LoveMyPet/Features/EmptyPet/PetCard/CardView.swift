@@ -10,11 +10,10 @@ struct CardView: View {
                     Image(uiImage: uiimage)
                         .frame(maxWidth: 70, maxHeight: 70)
                         .cornerRadius(36)
-                }
-                else {
+                } else {
                     Circle()
                         .foregroundColor(.gray)
-                        .frame(maxWidth: 70,maxHeight: 70)
+                        .frame(maxWidth: 70, maxHeight: 70)
                         .cornerRadius(37)
                 }
                 VStack(alignment: .leading, spacing: 10) {
@@ -24,9 +23,6 @@ struct CardView: View {
                 }
                 .background(Color("backgroud_color"))
                 Spacer()
-//                Image("arrow_icon")
-//                    .foregroundColor(.gray)
-//                    .padding(.trailing, 40)
             }
         }.background(Color("backgroud_color"))
             .padding(.vertical, 40)
@@ -37,7 +33,6 @@ struct CardView: View {
                     .frame(width: 330, height: 100)
             )
             .background(Color("backgroud_color"))
-            //.cardStyle(.plain)
     }
 }
 

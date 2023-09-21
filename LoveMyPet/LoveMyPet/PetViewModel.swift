@@ -75,7 +75,6 @@ class PetViewModel: ObservableObject {
         pet.weight = (Double(quilo)) + (Double(Double(Int(gram * 10) % 10 ) / 10.0 ))
         pet.registered = registered
         pet.castrated = castrated
-        
         do {
             try stack.viewContext.save()
         } catch {

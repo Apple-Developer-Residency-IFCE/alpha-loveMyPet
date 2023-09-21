@@ -3,8 +3,8 @@ class ImageFileManager {
     func loadImage(named imageName: String) -> Data? {
         let fileURL = getDocumentsDirectory().appendingPathComponent("\(imageName).jpg")
         do {
-            return try Data(contentsOf: fileURL)}
-        catch{
+            return try Data(contentsOf: fileURL)
+        } catch {
             return nil
         }
     }
@@ -17,7 +17,6 @@ class ImageFileManager {
             return false
         }
     }
-    
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]

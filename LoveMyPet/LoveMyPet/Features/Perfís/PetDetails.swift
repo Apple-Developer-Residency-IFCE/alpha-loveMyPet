@@ -11,11 +11,9 @@ struct PetDetails: View {
         numberFormatter.maximumFractionDigits = 1
         return numberFormatter.string(from: NSNumber(value: vmShowPet.weight)) ?? ""
     }
-
     var body: some View {
         let currenDate = vmShowPet.date
         let formattedDate = dataFormatter.string(from: currenDate)
-
         VStack(spacing: 30) {
             Color("backgroud_color")
             if let data = vmShowPet.imageData {
@@ -23,7 +21,6 @@ struct PetDetails: View {
                     .resizable()
                     .frame(height: 230)
             }
-       
             HStack {
                 VStack(alignment: .leading, spacing: 16) {
                     HStack {

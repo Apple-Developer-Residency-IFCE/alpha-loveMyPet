@@ -43,8 +43,6 @@ struct ImagePicker_Previews: PreviewProvider {
                     imageData: .constant(.none))
     }
 }
-
-
 extension Image {
     init(data: Data) {
         self.init(uiImage: UIImage(data: data)!)
