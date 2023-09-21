@@ -19,7 +19,10 @@ struct SheetEditPetView: View {
         }
         .foregroundColor(Color("cancel_button"))
         .bold()
-        .sheet(isPresented: $showSheet) {
+        .sheet(isPresented: $showSheet, onDismiss: {
+            //            NavigationLink(destination: PetsView(imageFileManager: .init())) {
+            //            }
+        }) {
             NavigationStack {
                 VStack(spacing: -15) {
                     Rectangle()
@@ -38,7 +41,7 @@ struct SheetEditPetView: View {
                                 Button("Salvar") {
                                     showSheet = false
                                     Task { await vmEditPet.save()}
-                                  //  vmEditPet.fetchPet()
+                                    vmEditPet.fetchPet()
                                 }
                                 .bold()
                                 .foregroundColor(Color("cancel_button"))

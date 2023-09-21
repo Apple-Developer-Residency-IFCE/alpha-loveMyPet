@@ -72,7 +72,7 @@ class PetViewModel: ObservableObject {
         pet.species = species
         pet.date = date
         pet.race = race
-        pet.weight = (Double(quilo)) + (Double(Double(Int(gram * 10) % 10 ) / 10.0 ))
+        pet.weight = (Double(quilo)) + (Double(gram)/10)
         pet.registered = registered
         pet.castrated = castrated
         do {
