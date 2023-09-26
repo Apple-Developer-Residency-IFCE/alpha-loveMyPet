@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EditPetView: View {
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject private var vmodel: PetViewModel
     @State private var selectedAnimal = ""
     @State private var selectedGender = ""
@@ -77,21 +78,24 @@ struct EditPetView: View {
                             title: Text("Deseja excluir o cadastro?"),
                             message: Text("Uma vez excluída, essa ação não pode ser desfeita."),
                             primaryButton: .destructive(
-                                Text("Excluir")
-                                    .foregroundColor(.red),
-                                action: {
-                                    vmodel.delete()
-                                }
-                            )
-                            ,
+                                    Text("Excluir")
+                                        .foregroundColor(.red)
+                                        , action: {
+                                        vmodel.delete()
+                                        dismiss()
+                                    }
+                                    ) ,
                             secondaryButton: .cancel(Text("Cancelar")) {}
-                        )
+                            )
+                        
                     }
                 Spacer()
             }
             .background(Color("backgroud_color"))
         }
     }
+    
+//    var alert: some View {}
 }
 
 struct EditPetView_Previews: PreviewProvider {

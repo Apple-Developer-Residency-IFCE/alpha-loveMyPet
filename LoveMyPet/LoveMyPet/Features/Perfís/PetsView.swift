@@ -1,5 +1,4 @@
 import SwiftUI
-
 struct PetsView: View {
     @State var hasPet: Bool = false
     @State var sheetShow: Bool = false
@@ -20,16 +19,17 @@ struct PetsView: View {
                                     vmPetsView.setPetToEdit(pet)
                                 }
                         } label: {
-                            if let imageData = vmPetsView.loadImage(name: pet.id!.uuidString) {
-                                CardView(imagepet: imageData,
+                                CardView(imagepet: vmPetsView.loadImage(name: pet.id!.uuidString),
                                          name: pet.name ?? "",
                                          specie: pet.race ?? "")
-                            }
                         }
                         .buttonStyle(.plain)
                     }
                     .listRowBackground(Color("backgroud_color"))
                 }
+                // 1. Transformar o Pet am Hashable
+                // 2. Estudar sobre navigationDetination e NavigationLoink(value) linha 16
+                //.navigationDestination(for: Pet, destination: PetDetails())
                 .background(.clear)
                 .scrollContentBackground(.hidden)
             }

@@ -10,7 +10,7 @@ import SwiftUI
 struct SheetEditPetView: View {
     @State var showSheet: Bool = false
     @EnvironmentObject var vmEditPet: PetViewModel
-   // let action: () -> Void
+    var onDismiss: () -> Void
 
     var body: some View {
         Button("Editar") {
@@ -19,10 +19,7 @@ struct SheetEditPetView: View {
         }
         .foregroundColor(Color("cancel_button"))
         .bold()
-        .sheet(isPresented: $showSheet, onDismiss: {
-            //            NavigationLink(destination: PetsView(imageFileManager: .init())) {
-            //            }
-        }) {
+        .sheet(isPresented: $showSheet, onDismiss: onDismiss) {
             NavigationStack {
                 VStack(spacing: -15) {
                     Rectangle()

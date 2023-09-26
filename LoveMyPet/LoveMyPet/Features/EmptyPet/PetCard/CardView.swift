@@ -5,7 +5,7 @@ struct CardView: View {
     @State var specie: String = "Husky Siberiano"
     var body: some View {
         VStack {
-            HStack(spacing: 16) {
+            HStack(spacing: 17) {
                 if let uiimage = UIImage(data: imagepet ?? Data()) {
                     Image(uiImage: uiimage)
                         .frame(maxWidth: 70, maxHeight: 70)
@@ -15,6 +15,7 @@ struct CardView: View {
                         .foregroundColor(.gray)
                         .frame(maxWidth: 70, maxHeight: 70)
                         .cornerRadius(37)
+                        //.padding(.leading,37)
                 }
                 VStack(alignment: .leading, spacing: 10) {
                     Text(name)
