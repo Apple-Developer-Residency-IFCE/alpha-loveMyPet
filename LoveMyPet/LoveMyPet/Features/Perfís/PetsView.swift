@@ -11,7 +11,7 @@ struct PetsView: View {
                 EmptyCard()
                 Spacer()
             } else {
-                List {
+                ScrollView {
                     ForEach(vmPetsView.items, id: \.self) { pet in
                         NavigationLink {
                             PetDetails()
@@ -24,12 +24,15 @@ struct PetsView: View {
                                 CardView(imagepet: imageData,
                                          name: pet.name ?? "",
                                          specie: pet.race ?? "")
+
                             }
                         }
-                        .buttonStyle(.plain)
+                        .padding(.vertical, 13)
                     }
                     .listRowBackground(Color("backgroud_color"))
                 }
+                .padding(.horizontal, 25)
+                .padding(.vertical, 30)
                 .background(.clear)
                 .scrollContentBackground(.hidden)
             }

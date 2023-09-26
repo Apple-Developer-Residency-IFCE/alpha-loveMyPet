@@ -13,7 +13,8 @@ struct SheetAddPet: View {
         .sheet(isPresented: $showingSheet, onDismiss: {
             vmSheet.clear()
             vmSheet.fetchPet()
-        }) {
+        })
+        {
             NavigationStack {
                 VStack(spacing: -15) {
                     Rectangle()
@@ -38,7 +39,7 @@ struct SheetAddPet: View {
                                 .bold()
                                 .foregroundColor(Color("cancel_button"))
                             }
-                        .padding(.top, -30))
+                                .padding(.top, -30))
                         .frame(height: 100)
                     Rectangle()
                         .frame(width: 400, height: 0.5)

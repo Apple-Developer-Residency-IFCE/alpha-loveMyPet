@@ -19,9 +19,9 @@ struct ImagePicker: View {
 
                 if let imageData = imageData {
                     Image(data: imageData)
-                        .resizable()
+                       .resizable()
                         .frame(width: 64, height: 64)
-                        .scaledToFit()
+                       // .scaledToFit()
                         .cornerRadius(100)
                         .padding(.bottom, 30)
                 }

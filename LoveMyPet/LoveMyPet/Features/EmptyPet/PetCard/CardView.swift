@@ -8,8 +8,9 @@ struct CardView: View {
             HStack(spacing: 16) {
                 if let uiimage = UIImage(data: imagepet ?? Data()) {
                     Image(uiImage: uiimage)
-                        .frame(maxWidth: 70, maxHeight: 70)
+                        .resizable()
                         .cornerRadius(36)
+                        .frame(width: 64, height: 64)
                 } else {
                     Circle()
                         .foregroundColor(.gray)
@@ -21,18 +22,17 @@ struct CardView: View {
                         .bold()
                     Text(specie)
                 }
-                .background(Color("backgroud_color"))
+                .foregroundColor(Color("background_text"))
                 Spacer()
             }
-        }.background(Color("backgroud_color"))
-            .padding(.vertical, 40)
-            .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(lineWidth: 2)
-                    .foregroundColor(Color("borders_color"))
-                    .frame(width: 330, height: 100)
-            )
-            .background(Color("backgroud_color"))
+        }
+        .padding(.vertical, 12)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(lineWidth: 2)
+                .foregroundColor(Color("borders_color"))
+        )
+        .background(Color("PetCard"))
     }
 }
 
