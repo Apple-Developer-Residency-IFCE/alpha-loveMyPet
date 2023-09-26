@@ -1,5 +1,8 @@
 import SwiftUI
 struct PetDetails: View {
+    @Environment (\.presentationMode) var presetationMode
+    @State private var selection: String?
+    @State private var didDelete: Bool = false
     @EnvironmentObject var vmShowPet: PetViewModel
     var dataFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -89,7 +92,9 @@ struct PetDetails: View {
         .navigationTitle("Informações do pet")
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                SheetEditPetView()
+                SheetEditPetView(onDismiss: {
+                    presetationMode.wrappedValue.dismiss()
+                })
             }
         }
     }

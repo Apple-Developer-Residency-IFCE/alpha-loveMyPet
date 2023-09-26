@@ -20,7 +20,7 @@ class PetViewModel: ObservableObject {
     @Published var registered: Bool = false
     @Published var castrated: Bool = false
     @Published var gender: String = ""
-
+    
     var hasError: Bool = false
     init(stack: PetProvider, editPet: Pet? = nil, imageFileManager: ImageFileManager) {
         self.stack = stack
@@ -60,12 +60,13 @@ class PetViewModel: ObservableObject {
             pet = Pet(context: stack.viewContext)
             pet.id = UUID()
         }
-        guard let data = self.imageData,
-              imageFileManager.saveImage(imageData: data, withName: pet.id!.uuidString)
-        else {
-            clear()
-            return
+        if let data = self.imageData{
+            imageFileManager.saveImage(imageData: data, withName: pet.id!.uuidString)
         }
+//        else {
+//            clear()
+//            return
+//        }
 
         pet.gender = gender
         pet.name = name
@@ -82,23 +83,23 @@ class PetViewModel: ObservableObject {
             hasError = true
         }
 
-        clear()
+//        clear()
     }
 
     func clear () {
-        name = ""
-        species = ""
         DispatchQueue.main.async {
+            self.name = ""
+            self.species = ""
             self.date = Date()
+            self.race = ""
+            self.weight = 0.0
+            self.registered = false
+            self.castrated = false
+            self.gender = ""
+            self.quilo = 0
+            self.gram = 0
+            self.imageData = nil
         }
-        race = ""
-        weight = 0.0
-        registered = false
-        castrated = false
-        gender = ""
-        quilo = 0
-        gram = 0
-        imageData = nil
     }
 
     func setPetToEdit(_ pet: Pet) {
