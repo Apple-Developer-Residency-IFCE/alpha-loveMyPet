@@ -7,6 +7,7 @@ struct PetDetails: View {
     var dataFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
+        formatter.locale = Locale(identifier: "pt_BR")
         return formatter
     }()
     var formattedWeight: String {

@@ -11,10 +11,8 @@ struct SheetEditPetView: View {
     @State var showSheet: Bool = false
     @EnvironmentObject var vmEditPet: PetViewModel
     var onDismiss: () -> Void
-
     var body: some View {
         Button("Editar") {
-       //     action()
             showSheet = true
         }
         .foregroundColor(Color("cancel_button"))
@@ -57,10 +55,3 @@ struct SheetEditPetView: View {
         }
     }
 }
-//    struct SheetPetView_Previews: PreviewProvider {
-//        static var previews: some View {
-//            SheetEditPetView {
-//              //  print("")
-//            }
-//        }
-//    }

@@ -27,7 +27,7 @@ struct EditPetView: View {
             VStack(spacing: 0) {
                 ImagePicker(text: "Trocar foto",
                             imageData: $vmodel.imageData)
-                    .padding(.top, 20)
+                .padding(.top, 20)
                 List {
                     Section {
                         Text(vmodel.name)
@@ -78,24 +78,21 @@ struct EditPetView: View {
                             title: Text("Deseja excluir o cadastro?"),
                             message: Text("Uma vez excluída, essa ação não pode ser desfeita."),
                             primaryButton: .destructive(
-                                    Text("Excluir")
-                                        .foregroundColor(.red)
-                                        , action: {
-                                        vmodel.delete()
-                                        dismiss()
-                                    }
-                                    ) ,
+                                Text("Excluir")
+                                    .foregroundColor(.red)
+                                , action: {
+                                    vmodel.delete()
+                                    dismiss()
+                                }
+                            ),
                             secondaryButton: .cancel(Text("Cancelar")) {}
-                            )
-                        
+                        )
                     }
                 Spacer()
             }
             .background(Color("backgroud_color"))
         }
     }
-    
-//    var alert: some View {}
 }
 
 struct EditPetView_Previews: PreviewProvider {

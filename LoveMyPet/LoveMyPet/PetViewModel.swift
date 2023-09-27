@@ -4,12 +4,9 @@ import PhotosUI
 class PetViewModel: ObservableObject {
     var stack: PetProvider
     var imageFileManager: ImageFileManager
-
     private var editPet: Pet?
     @Published var imageData: Data?
-
     @Published var items: [Pet] = []
-
     @Published var name: String = ""
     @Published var species: String = ""
     @Published var date: Date = Date()
@@ -20,7 +17,6 @@ class PetViewModel: ObservableObject {
     @Published var registered: Bool = false
     @Published var castrated: Bool = false
     @Published var gender: String = ""
-    
     var hasError: Bool = false
     init(stack: PetProvider, editPet: Pet? = nil, imageFileManager: ImageFileManager) {
         self.stack = stack
@@ -60,14 +56,9 @@ class PetViewModel: ObservableObject {
             pet = Pet(context: stack.viewContext)
             pet.id = UUID()
         }
-        if let data = self.imageData{
+        if let data = self.imageData {
             imageFileManager.saveImage(imageData: data, withName: pet.id!.uuidString)
         }
-//        else {
-//            clear()
-//            return
-//        }
-
         pet.gender = gender
         pet.name = name
         pet.species = species
@@ -82,10 +73,7 @@ class PetViewModel: ObservableObject {
             print("Error para salvar o pet: \(error)")
             hasError = true
         }
-
-//        clear()
     }
-
     func clear () {
         DispatchQueue.main.async {
             self.name = ""
@@ -101,7 +89,6 @@ class PetViewModel: ObservableObject {
             self.imageData = nil
         }
     }
-
     func setPetToEdit(_ pet: Pet) {
         self.editPet = pet
         self.name = pet.name ?? ""
