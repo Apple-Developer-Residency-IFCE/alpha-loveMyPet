@@ -8,32 +8,37 @@ struct CardView: View {
             HStack(spacing: 17) {
                 if let uiimage = UIImage(data: imagepet ?? Data()) {
                     Image(uiImage: uiimage)
-                        .frame(maxWidth: 70, maxHeight: 70)
+                        .resizable()
                         .cornerRadius(36)
+                        .frame(width: 64, height: 64)
+                        .padding(.leading, 25)
                 } else {
                     Circle()
                         .foregroundColor(.gray)
                         .frame(maxWidth: 70, maxHeight: 70)
                         .cornerRadius(37)
-                        //.padding(.leading,37)
                 }
                 VStack(alignment: .leading, spacing: 10) {
                     Text(name)
                         .bold()
                     Text(specie)
                 }
-                .background(Color("backgroud_color"))
+                .foregroundColor(Color("background_text"))
                 Spacer()
+                Image(systemName: "chevron.right")
+                    .foregroundColor(Color("chevron_color"))
+                    .padding(.trailing, 35)
+                    .bold()
             }
-        }.background(Color("backgroud_color"))
-            .padding(.vertical, 40)
-            .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(lineWidth: 2)
-                    .foregroundColor(Color("borders_color"))
-                    .frame(width: 330, height: 100)
-            )
-            .background(Color("backgroud_color"))
+        }
+        .padding(.vertical, 12)
+        .background(
+            RoundedRectangle(cornerRadius: 12, style: .circular).fill(Color("petcard_background"))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 12, style: .circular)
+                .strokeBorder(lineWidth: 3))
+        .foregroundColor(Color("petcard_foreground"))
     }
 }
 

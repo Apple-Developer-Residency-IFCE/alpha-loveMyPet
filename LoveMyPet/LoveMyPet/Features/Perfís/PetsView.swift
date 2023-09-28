@@ -10,7 +10,7 @@ struct PetsView: View {
                 EmptyCard()
                 Spacer()
             } else {
-                List {
+                ScrollView {
                     ForEach(vmPetsView.items, id: \.self) { pet in
                         NavigationLink {
                             PetDetails()
@@ -23,13 +23,13 @@ struct PetsView: View {
                                          name: pet.name ?? "",
                                          specie: pet.race ?? "")
                         }
-                        .buttonStyle(.plain)
+                        .padding(.vertical, 5)
+
                     }
                     .listRowBackground(Color("backgroud_color"))
                 }
-                // 1. Transformar o Pet am Hashable
-                // 2. Estudar sobre navigationDetination e NavigationLoink(value) linha 16
-                //.navigationDestination(for: Pet, destination: PetDetails())
+                .padding(.horizontal, 25)
+                .padding(.vertical, 30)
                 .background(.clear)
                 .scrollContentBackground(.hidden)
             }
