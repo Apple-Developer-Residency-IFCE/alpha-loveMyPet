@@ -45,10 +45,12 @@ struct PetPickerView: View {
                           selectedItem: $selectedAnimal,
                           pickerStyle: DefaultPickerStyle())
                 .listRowBackground(Color("forms_colors"))
-                PetPicker(title: "Raça",
-                          options: raceOptions,
-                          selectedItem: $selectedRace,
-                          pickerStyle: .navigationLink)
+//                PetPicker(title: "Raça",
+//                          options: raceOptions,
+//                          selectedItem: $selectedRace,
+//                          pickerStyle: .navigationLink)
+//                .listRowBackground(Color("forms_colors"))
+//                PetPicker(title: "Raça", options: Species.allCases, selectedItem: $selectedRace, pickerStyle: DefaultPickerStyle())
                 .listRowBackground(Color("forms_colors"))
                 DatePicker("Nascimento:", selection: $selectedData, in: ...Date(), displayedComponents: .date)
                     .environment(\.locale, Locale.init(identifier: "pt"))

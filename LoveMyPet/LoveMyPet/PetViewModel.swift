@@ -69,11 +69,23 @@ class PetViewModel: ObservableObject {
         pet.castrated = castrated
         do {
             try stack.viewContext.save()
+            refresh()
         } catch {
             print("Error para salvar o pet: \(error)")
             hasError = true
         }
     }
+    
+    private func refresh() {
+        guard let editPet = editPet,
+              let index = items.firstIndex(where: { $0.id! == editPet.id! })
+        else { return }
+        
+        items.remove(at: index)
+        items.insert(editPet, at: index)
+//        items.append(editPet)
+    }
+
     func clear () {
         DispatchQueue.main.async {
             self.name = ""
