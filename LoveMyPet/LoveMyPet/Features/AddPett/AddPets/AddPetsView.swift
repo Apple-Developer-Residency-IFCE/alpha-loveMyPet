@@ -5,23 +5,23 @@ struct AddPetsView: View {
     @State private var selectedCastrated = ""
     @State private var petname = ""
     @EnvironmentObject private var vmAdd: PetViewModel
-    let castratedOptions = ["Sim", "Não"]
     var body: some View {
         VStack {
             Spacer(minLength: 25)
-            ImagePicker(text: "Escolher foto",
-                        imageData: $vmAdd.imageData)
-            PetPickerView(selectedAnimal: $vmAdd.species,
-                       selectedGender: $vmAdd.gender,
-                       selectedRace: $vmAdd.race,
-                       petName: $vmAdd.name,
-                       selectedData: $vmAdd.date)
+            ImagePicker(text: "Escolher foto", imageData: $vmAdd.imageData)
+            PetPickerView(
+                selectedGender: $vmAdd.gender,
+                petName: $vmAdd.name,
+                selectedData: $vmAdd.date,
+                pEnum: $vmAdd.species,
+                pBreed: $vmAdd.race
+            )
             List {
                 PickerKG(weight: $vmAdd.weight, isView: $isView, quilo: $vmAdd.quilo, grama: $vmAdd.gram )
                     .listRowBackground(Color("forms_colors"))
                     .padding(.bottom, -20)
                 CastratedPickerView(castratedOptions: $vmAdd.castrated)
-                .listRowBackground(Color("forms_colors"))
+                    .listRowBackground(Color("forms_colors"))
             }
             .padding(.top, -30)
         }

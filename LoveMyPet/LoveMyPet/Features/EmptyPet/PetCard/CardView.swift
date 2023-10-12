@@ -15,8 +15,9 @@ struct CardView: View {
                 } else {
                     Circle()
                         .foregroundColor(.gray)
-                        .frame(maxWidth: 70, maxHeight: 70)
-                        .cornerRadius(37)
+                        .frame(width: 64, height: 64)
+                        .cornerRadius(36)
+                        .padding(.leading, 25)
                 }
                 VStack(alignment: .leading, spacing: 10) {
                     Text(name)

@@ -18,10 +18,16 @@ struct EditPetView: View {
     @State var isView: Bool = false
     @State var namePet: String
     @State private var showingAlert: Bool = false
+    @Binding var pEnum: Species
+    @Binding var pBreed: String
     let castratedOptions = ["Sim", "Não"]
     let animalOptions = ["Não escolhida", "Cachorro", "Gato", "Pássaro", "Peixe"]
     let genderOptions = ["Nenhum", "Macho", "Fêmea"]
     let raceOptions = ["Não escolhida", "Golden Retriever", "Salsicha", "Goldfish"]
+    struct StringIdentifiable: Identifiable {
+        let id: String
+        let string: String
+    }
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
@@ -30,7 +36,7 @@ struct EditPetView: View {
                 .padding(.top, 20)
                 List {
                     Section {
-                        Text(vmodel.name)
+                        TextField("", text: $vmodel.name, prompt: Text("\(vmodel.name)"))
                             .foregroundColor(.gray)
                             .listRowBackground(Color("forms_colors"))
                         PetPicker(title: "Gênero",
@@ -38,15 +44,18 @@ struct EditPetView: View {
                                   selectedItem: $vmodel.gender,
                                   pickerStyle: DefaultPickerStyle())
                         .listRowBackground(Color("forms_colors"))
-                        PetPicker(title: "Espécie",
-                                  options: animalOptions,
-                                  selectedItem: $vmodel.species,
-                                  pickerStyle: DefaultPickerStyle())
+                        Picker("Espécie", selection: $vmodel.species) {
+                            ForEach(Species.allCases) { option in
+                                Text(String(describing: option.rawValue))                            }
+                        }
+                        .pickerStyle(DefaultPickerStyle())
                         .listRowBackground(Color("forms_colors"))
-                        PetPicker(title: "Raça",
-                                  options: raceOptions,
-                                  selectedItem: $vmodel.race,
-                                  pickerStyle: .navigationLink)
+                        Picker("Raça", selection: $vmodel.race) {
+                            ForEach(pEnum.breed.map { StringIdentifiable(id: $0, string: $0) }) {breed in
+                                Text(breed.string)
+                            }
+                        }
+                        .pickerStyle(.navigationLink)
                         .listRowBackground(Color("forms_colors"))
                         DatePicker("Nascimento:",
                                    selection: $vmodel.date,
@@ -97,7 +106,7 @@ struct EditPetView: View {
 
 struct EditPetView_Previews: PreviewProvider {
     static var previews: some View {
-        EditPetView(selectedData: Date.now, namePet: "Lua")
+        EditPetView(selectedData: Date(), namePet: "Lua", pEnum: .constant(.nãoEscolhido), pBreed: .constant(""))
             .environmentObject(PetViewModel(stack: .shared, imageFileManager: .init()))
     }
 }

@@ -7,6 +7,7 @@ struct SheetAddPet: View {
     var body: some View {
         Button("Adicionar") {
             showingSheet = true
+            vmSheet.clear()
         }
         .foregroundColor(Color("cancel_button"))
         .bold()

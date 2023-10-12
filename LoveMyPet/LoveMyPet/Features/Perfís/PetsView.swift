@@ -11,7 +11,7 @@ struct PetsView: View {
                 Spacer()
             } else {
                 ScrollView {
-                    ForEach(vmPetsView.items, id: \.self) { pet in
+                    ForEach(vmPetsView.items) { pet in
                         NavigationLink {
                             PetDetails()
                                 .environmentObject(vmPetsView)
@@ -19,7 +19,7 @@ struct PetsView: View {
                                     vmPetsView.setPetToEdit(pet)
                                 }
                         } label: {
-                                CardView(imagepet: vmPetsView.loadImage(name: pet.id!.uuidString),
+                                CardView(imagepet: vmPetsView.loadImage(name: pet.imageID!.uuidString),
                                          name: pet.name ?? "",
                                          specie: pet.race ?? "")
                         }

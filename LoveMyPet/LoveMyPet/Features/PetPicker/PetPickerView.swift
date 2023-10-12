@@ -21,14 +21,18 @@ struct PetPicker<ComponentStyle: PickerStyle>: View {
 }
 
 struct PetPickerView: View {
-    @Binding var selectedAnimal: String
     @Binding var selectedGender: String
-    @Binding var selectedRace: String
     @Binding var petName: String
     @Binding var selectedData: Date
+    @Binding var pEnum: Species
+    @Binding var pBreed: String
     let animalOptions = ["Não escolhida", "Cachorro", "Gato", "Pássaro", "Peixe"]
     let genderOptions = ["Nenhum", "Macho", "Fêmea"]
     let raceOptions = ["Não escolhida", "Golden Retriever", "Salsicha", "Goldfish"]
+    struct StringIdentifiable: Identifiable {
+        let id: String
+        let string: String
+    }
     var body: some View {
         VStack {
             List {
@@ -40,15 +44,19 @@ struct PetPickerView: View {
                           selectedItem: $selectedGender,
                           pickerStyle: DefaultPickerStyle())
                 .listRowBackground(Color("forms_colors"))
-                PetPicker(title: "Espécie",
-                          options: animalOptions,
-                          selectedItem: $selectedAnimal,
-                          pickerStyle: DefaultPickerStyle())
+                Picker("Espécie", selection: $pEnum) {
+                    ForEach(Species.allCases) {option in
+                        Text(String(describing: option.rawValue))
+                    }
+                }
+                .pickerStyle(DefaultPickerStyle())
                 .listRowBackground(Color("forms_colors"))
-                PetPicker(title: "Raça",
-                          options: raceOptions,
-                          selectedItem: $selectedRace,
-                          pickerStyle: .navigationLink)
+                Picker("Raça", selection: $pBreed) {
+                    ForEach(pEnum.breed.map { StringIdentifiable(id: $0, string: $0) }) {breed in
+                        Text(breed.string)
+                    }
+                }
+                .pickerStyle(.navigationLink)
                 .listRowBackground(Color("forms_colors"))
                 DatePicker("Nascimento:", selection: $selectedData, in: ...Date(), displayedComponents: .date)
                     .environment(\.locale, Locale.init(identifier: "pt"))
