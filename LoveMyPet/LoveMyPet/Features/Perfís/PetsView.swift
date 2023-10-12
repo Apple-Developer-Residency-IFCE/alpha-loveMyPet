@@ -35,7 +35,6 @@ struct PetsView: View {
             }
         }
         .onAppear {
-            vmPetsView.fetchPet()
             vmPetsView.clear()
         }
         .frame(maxWidth: .infinity)

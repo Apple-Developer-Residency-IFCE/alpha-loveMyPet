@@ -23,9 +23,11 @@ class PetViewModel: ObservableObject {
     init(stack: PetProvider, editPet: Pet? = nil, imageFileManager: ImageFileManager) {
         self.stack = stack
         self.imageFileManager = imageFileManager
+        self.fetchPet()
     }
     func fetchPet() {
         let request = NSFetchRequest<Pet>(entityName: "Pet")
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         do {
             items = try stack.viewContext.fetch(request)
         } catch let error {
