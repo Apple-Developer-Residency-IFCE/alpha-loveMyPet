@@ -48,7 +48,7 @@ struct PetDetails: View {
                         Text("Espécie")
                             .bold()
                         Spacer()
-                        Text("\(vmShowPet.species)")
+                        Text("\(vmShowPet.species.rawValue)")
                     }
                     HStack {
                         Text("Nascimento")

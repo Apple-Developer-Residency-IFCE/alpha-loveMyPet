@@ -49,7 +49,7 @@ struct SheetEditPetView: View {
                         .padding(.top, -30)
                     Divider()
                         .foregroundColor(Color("backgroud_color"))
-                    EditPetView(selectedData: .now, namePet: "Lua")
+                    EditPetView(selectedData: .now, namePet: "Lua", pEnum: $vmEditPet.species, pBreed: $vmEditPet.race)
                 }
             }
         }

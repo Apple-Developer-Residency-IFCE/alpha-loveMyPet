@@ -8,6 +8,7 @@ class ImageFileManager {
             return nil
         }
     }
+    @discardableResult
     func saveImage(imageData: Data, withName imageName: String) -> Bool {
         let fileURL = getDocumentsDirectory().appendingPathComponent("\(imageName).jpg")
         do {
