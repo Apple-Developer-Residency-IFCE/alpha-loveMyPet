@@ -38,6 +38,7 @@ class PetViewModel: ObservableObject {
         do {
             if let editPet = editPet {
                 stack.viewContext.delete(editPet)
+                items.removeAll(where: { editPet.id == $0.id })
                 do {
                     try stack.viewContext.save()
                     print("Pet deletado")

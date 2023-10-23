@@ -19,7 +19,8 @@ struct PetsView: View {
                                     vmPetsView.setPetToEdit(pet)
                                 }
                         } label: {
-                                CardView(imagepet: vmPetsView.loadImage(name: pet.imageID!.uuidString),
+                                CardView(imagepet: vmPetsView.loadImage(name: pet.imageID!.uuidString)
+                                         ,
                                          name: pet.name ?? "",
                                          specie: pet.race ?? "")
                         }
